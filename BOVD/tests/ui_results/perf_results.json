@@ -1,0 +1,47 @@
+{
+ "desktop_1920": {
+  "login_page_s": 0.29,
+  "domContentLoaded_ms": 118,
+  "dash_with_3d_s": 0.37,
+  "hscroll": false,
+  "js_heap_mb": 5,
+  "perf3d": {
+   "frames": 2,
+   "avg_ms": 10.3
+  }
+ },
+ "laptop_1366": {
+  "login_page_s": 0.2,
+  "domContentLoaded_ms": 92,
+  "dash_with_3d_s": 0.37,
+  "hscroll": false,
+  "js_heap_mb": 4,
+  "perf3d": {
+   "frames": 2,
+   "avg_ms": 12.8
+  }
+ },
+ "tablet_768": {
+  "login_page_s": 0.23,
+  "domContentLoaded_ms": 87,
+  "dash_with_3d_s": 0.4,
+  "hscroll": false,
+  "js_heap_mb": 4,
+  "perf3d": {
+   "frames": 2,
+   "avg_ms": 15.35
+  }
+ },
+ "phone_375": {
+  "login_page_s": 0.21,
+  "domContentLoaded_ms": 107,
+  "dash_with_3d_s": 0.35,
+  "hscroll": false,
+  "js_heap_mb": 4,
+  "perf3d": {
+   "frames": 2,
+   "avg_ms": 9.95
+  }
+ },
+ "js_total_kb": 255.8
+}

@@ -1,0 +1,12 @@
+{
+  "dataset_id": "OSD-<number>",
+  "license": "NASA open data – Data are courtesy of the NASA Open Science Data Repository",
+  "citation": "<paste the study citation from the OSDR study page>",
+  "subject_column": "<column with subject id>",
+  "time_column": "<column with ISO 8601 timestamp>",
+  "gravity_context": "iss",
+  "columns": {
+    "<heart rate column>": {"indicator": "heart_rate", "unit": "bpm"},
+    "<SpO2 column>": {"indicator": "spo2", "unit": "%"}
+  }
+}

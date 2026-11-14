@@ -1,0 +1,14 @@
+{
+ "description": "Synthetic landmark set (rules only, not MediaPipe accuracy); seed 42; 100 cases per class",
+ "n": 400,
+ "tp": 100,
+ "tn": 299,
+ "fp": 1,
+ "fn": 0,
+ "fp_by_kind": {
+  "arm_wrong": 1,
+  "trunk_tilted": 0,
+  "legs_crossed": 0
+ },
+ "accuracy": 0.9975
+}

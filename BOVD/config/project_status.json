@@ -1,0 +1,50 @@
+{
+  "done": [
+    "Local Python server (standard library only) + HTML/JS UI, one-click start.bat",
+    "SQLite WAL storage, AES-256-GCM field encryption, FHIR R4 Observations with LOINC/UCUM and provenance",
+    "Validation, personal-baseline (±2 SD) engine, Earth thresholds, trend rules, composite score 0–20, WHY panels",
+    "3-priority alerts, escalation crew → CMO → flight surgeon, store-and-forward queue with Moon/Mars delay",
+    "Gravity contexts + Gravity Transition Protocol + post-landing stand test",
+    "F4 Smart Doctor (7 protocols, lint gate), F5 radiation map + SPE mode, F2 vision screening + image compare",
+    "F6 urinalysis adapter + schema, F7 coach within prescription bounds, F9 hash-chained black box + OAIS export",
+    "10 synthetic scenarios with SYNTHETIC badges; Arabic/English with RTL; role-based access (5 roles)"
+  ],
+  "partial": [
+    "F1 voice: on-device feature extraction implemented in the browser; accuracy not validated (EXPERIMENTAL)",
+    "F2 webcam blink: crude luminance method, EXPERIMENTAL; MediaPipe not bundled (offline, no download)",
+    "F3 crew index and F8 connection: logic complete, weights are examples awaiting expert review",
+    "REAL data: OSDR loader + mapping implemented; no real dataset bundled (must be downloaded)",
+    "PWA: offline cache and IndexedDB outbox; the app also needs the local Python server running"
+  ],
+  "next": [
+    "Flight-surgeon review of every threshold and protocol",
+    "Usability test with gloved/floating users (analog mission)",
+    "Full-database encryption (SQLCipher) and HSM key storage",
+    "Validate voice / blink signals on consented real data; bias evaluation",
+    "React/FastAPI build variant described in the brief, if the team wants it"
+  ],
+  "done_ar": [
+    "خادم بايثون محلي (المكتبة القياسية فقط) مع واجهة HTML، تشغيل بنقرة من start.bat",
+    "تخزين SQLite بوضع WAL، تشفير AES-256-GCM، قراءات FHIR R4 برموز LOINC/UCUM مع مصدر كل قيمة",
+    "التحقق، محرك خط الأساس الشخصي (±2 انحراف معياري)، العتبات الأرضية، قواعد الاتجاه، الدرجة المركّبة 0–20، لوحات «لماذا»",
+    "تنبيهات بثلاث أولويات، تصعيد الطاقم ← الضابط الطبي ← الجراح الجوي، طابور «خزّن ثم أرسل» بتأخير القمر والمريخ",
+    "سياقات الجاذبية + بروتوكول انتقال الجاذبية + اختبار الوقوف بعد الهبوط",
+    "F4 الطبيب الذكي (7 بروتوكولات مع فحص آلي)، F5 خريطة الإشعاع ووضع العاصفة، F2 فحص الرؤية ومقارنة الصور",
+    "F6 محوّل تحليل البول ومخططه، F7 المدرب داخل حدود الوصفة، F9 الصندوق الأسود وتصدير OAIS",
+    "10 سيناريوهات مُصطنعة بشارة واضحة؛ عربي/إنجليزي مع الاتجاه من اليمين؛ صلاحيات لخمسة أدوار"
+  ],
+  "partial_ar": [
+    "F1 الصوت: استخراج الخصائص على الجهاز منفَّذ؛ الدقة غير مُتحقق منها (تجريبي)",
+    "F2 رمش الكاميرا: طريقة بدائية تعتمد على الإضاءة (تجريبي)؛ مكتبة MediaPipe غير مضمّنة",
+    "F3 مؤشر الطاقم و F8 الحنين: المنطق مكتمل، والأوزان أمثلة بانتظار مراجعة خبير",
+    "البيانات الحقيقية: محمّل OSDR جاهز؛ لا توجد مجموعة بيانات مضمّنة (يجب تحميلها)",
+    "تطبيق الويب التقدمي: ذاكرة مؤقتة وصندوق إرسال دون اتصال؛ ويحتاج الخادم المحلي أن يعمل"
+  ],
+  "next_ar": [
+    "مراجعة جراح جوي لكل عتبة وبروتوكول",
+    "اختبار الاستخدام بالقفازات وحالة الطفو (مهمة محاكاة)",
+    "تشفير كامل لقاعدة البيانات (SQLCipher) وحفظ المفاتيح في وحدة أمان مادية",
+    "التحقق من إشارات الصوت والرمش على بيانات حقيقية بموافقة؛ تقييم التحيّز",
+    "نسخة React/FastAPI الموصوفة في الملف الأصلي، إن رغب الفريق"
+  ]
+}

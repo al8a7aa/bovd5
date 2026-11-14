@@ -1,0 +1,87 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "B\u00d6VD-SBOM",
+  "documentNamespace": "https://bovd.local/spdx/1d2f0d51-cac0-4b89-b05d-c0f4ede2ba35",
+  "creationInfo": {
+    "created": "2026-11-14T00:00:00Z",
+    "creators": [
+      "Tool: scripts/build_deliverables.py"
+    ]
+  },
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-0",
+      "name": "B\u00d6VD",
+      "versionInfo": "0.9.0",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "downloadLocation": "NOASSERTION",
+      "supplier": "NOASSERTION",
+      "comment": "this project"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-1",
+      "name": "CPython standard library",
+      "versionInfo": "\u22653.10",
+      "licenseConcluded": "PSF-2.0",
+      "licenseDeclared": "PSF-2.0",
+      "downloadLocation": "NOASSERTION",
+      "supplier": "NOASSERTION",
+      "comment": "runtime"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-2",
+      "name": "SQLite",
+      "versionInfo": "bundled with Python",
+      "licenseConcluded": "blessing",
+      "licenseDeclared": "blessing",
+      "downloadLocation": "NOASSERTION",
+      "supplier": "NOASSERTION",
+      "comment": "runtime"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-3",
+      "name": "cryptography (optional)",
+      "versionInfo": "\u226541",
+      "licenseConcluded": "Apache-2.0 OR BSD-3-Clause",
+      "licenseDeclared": "Apache-2.0 OR BSD-3-Clause",
+      "downloadLocation": "NOASSERTION",
+      "supplier": "NOASSERTION",
+      "comment": "optional fast AES-GCM"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-4",
+      "name": "pytest (dev)",
+      "versionInfo": "\u22658",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "downloadLocation": "NOASSERTION",
+      "supplier": "NOASSERTION",
+      "comment": "tests only"
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-Package-0",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-0",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-2"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-0",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-3"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-0",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-4"
+    }
+  ]
+}

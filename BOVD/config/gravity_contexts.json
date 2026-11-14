@@ -1,0 +1,23 @@
+{
+  "_note": "Microgravity rule 7: switching the gravity context changes expected baselines, available tests, communication delay, and countermeasure advice. Comm delays are one-way light-time approximations.",
+  "contexts": {
+    "earth_preflight": {"label_en": "Earth (pre-flight)", "label_ar": "الأرض (قبل الرحلة)", "g": 1.0, "delay_s": [0, 0], "standing_tests": true, "baseline_phase": "preflight",
+      "advice_en": "Collect pre-flight baseline: same time of day, seated, 5-minute rest.", "advice_ar": "اجمع خط الأساس قبل الرحلة: نفس الوقت يوميًا، جالسًا، راحة 5 دقائق."},
+    "iss": {"label_en": "ISS (0 g, LEO)", "label_ar": "محطة الفضاء الدولية (0 g)", "g": 0.0, "delay_s": [0, 1], "standing_tests": false, "baseline_phase": "inflight",
+      "advice_en": "0 g: headward fluid shift. Follow ARED/treadmill/cycle prescription. ~16 sunrises/day — follow the crew schedule for sleep.", "advice_ar": "انعدام الجاذبية: انتقال السوائل نحو الرأس. التزم بوصفة ARED والمشي والدراجة. نحو 16 شروقًا يوميًا — اتبع جدول الطاقم للنوم."},
+    "mars_transit": {"label_en": "Mars transit (0 g)", "label_ar": "العبور إلى المريخ (0 g)", "g": 0.0, "delay_s": [240, 1440], "standing_tests": false, "baseline_phase": "inflight",
+      "advice_en": "Deep space: higher galactic-cosmic-ray exposure; long comm delay — rely on onboard protocols (EIMO).", "advice_ar": "الفضاء العميق: تعرض أعلى للأشعة الكونية؛ تأخر اتصال طويل — اعتمد على البروتوكولات المحلية."},
+    "lunar_surface": {"label_en": "Lunar base (1/6 g)", "label_ar": "قاعدة القمر (1/6 g)", "g": 0.166, "delay_s": [1.3, 1.3], "standing_tests": true, "baseline_phase": "inflight",
+      "advice_en": "Partial gravity: seated stand-test available after landing. Dust and SPE shelter readiness.", "advice_ar": "جاذبية جزئية: اختبار الوقوف متاح بعد الهبوط. الاستعداد لملجأ العواصف الشمسية."},
+    "mars_surface": {"label_en": "Mars surface (3/8 g)", "label_ar": "سطح المريخ (3/8 g)", "g": 0.375, "delay_s": [240, 1440], "standing_tests": true, "baseline_phase": "inflight",
+      "advice_en": "First days after landing: Gravity Transition Protocol (fluid loading, compression garment, seated stand test).", "advice_ar": "الأيام الأولى بعد الهبوط: بروتوكول انتقال الجاذبية (تحميل السوائل، ملابس ضاغطة، اختبار وقوف جالس)."},
+    "rover": {"label_en": "Pressurized rover", "label_ar": "مركبة متنقلة مضغوطة", "g": 0.375, "delay_s": [240, 1440], "standing_tests": false, "baseline_phase": "inflight",
+      "advice_en": "Confined volume: watch cabin CO2 and sleep; limited exercise equipment.", "advice_ar": "حجم محدود: راقب ثاني أكسيد الكربون والنوم؛ معدات تمرين محدودة."}
+  },
+  "gravity_transition_protocol": {
+    "trigger": "Mission timeline event of type 'landing' or 'return' (transition from 0 g to partial/1 g).",
+    "steps_en": ["Fluid loading: ~1 L water/oral rehydration with salt tablets before deorbit/landing (per onboard protocol)", "Don compression garment before landing", "Remain seated/supine for initial period after landing", "Seated → stand test at +2 h and +24 h: record HR and BP at 1 and 3 minutes", "Report HR rise > 30 bpm or systolic drop > 20 mmHg to CMO"],
+    "steps_ar": ["تحميل السوائل: نحو لتر ماء/محلول مع أقراص ملح قبل الهبوط (حسب البروتوكول)", "ارتداء الملابس الضاغطة قبل الهبوط", "البقاء جالسًا/مستلقيًا في الفترة الأولى بعد الهبوط", "اختبار الجلوس ← الوقوف عند +2 ساعة و +24 ساعة: سجّل النبض والضغط عند الدقيقة 1 و 3", "أبلغ الضابط الطبي إذا ارتفع النبض أكثر من 30 أو انخفض الانقباضي أكثر من 20"],
+    "citation": ["hrp_oi_2015"], "review_needed": true
+  }
+}

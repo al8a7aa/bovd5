@@ -1,0 +1,83 @@
+{
+  "_note": "F4 Offline Smart Doctor. Rule-based decision trees. TRAINING CONTENT – MUST BE REVIEWED AND REPLACED BY THE MISSION'S APPROVED FLIGHT-SURGEON PROTOCOLS. Medications may only reference items in approved_onboard_items. Node types: question (yes/no), action (then next), stop (call CMO / flight surgeon).",
+  "approved_onboard_items": ["oral_glucose", "oral_rehydration", "compression_garment", "oxygen_mask", "ecg_device", "thermometer", "sleep_mask_earplugs", "dosimeter", "medical_kit_per_protocol"],
+  "protocols": {
+    "chest_pain": {
+      "title_en": "Chest pain", "title_ar": "ألم الصدر", "citation": ["exmc_cdss_2022", "nasa_cv_risk"], "start": "q1",
+      "nodes": {
+        "q1": {"type": "question", "en": "Is the pain crushing/pressure-like, spreading to arm/jaw, or with sweating, breathlessness or fainting?", "ar": "هل الألم ضاغط أو ينتشر للذراع/الفك، أو مع تعرّق أو ضيق نفس أو إغماء؟", "yes": "s1", "no": "q2"},
+        "s1": {"type": "stop", "en": "STOP – call CMO now. Start onboard cardiac protocol, attach ECG device, give oxygen per protocol. Do not exercise.", "ar": "توقف – اتصل بالضابط الطبي فورًا. ابدأ بروتوكول القلب، صِل جهاز تخطيط القلب، أعطِ الأكسجين حسب البروتوكول.", "items": ["ecg_device", "oxygen_mask"]},
+        "q2": {"type": "question", "en": "Does the pain change with breathing, pressing on the chest, or twisting?", "ar": "هل يتغير الألم مع التنفس أو الضغط على الصدر أو الالتواء؟", "yes": "a1", "no": "s2"},
+        "a1": {"type": "action", "en": "Likely musculoskeletal pattern (not a diagnosis). Rest, record HR/BP/SpO2 now and in 30 min.", "ar": "نمط عضلي هيكلي محتمل (ليس تشخيصًا). استرح، وسجّل النبض والضغط والأكسجين الآن وبعد 30 دقيقة.", "next": "q3"},
+        "q3": {"type": "question", "en": "After 30 min: is the pain worse or are vitals yellow/red?", "ar": "بعد 30 دقيقة: هل ازداد الألم أو المؤشرات صفراء/حمراء؟", "yes": "s2", "no": "e1"},
+        "s2": {"type": "stop", "en": "STOP – call CMO and queue a report to the flight surgeon.", "ar": "توقف – اتصل بالضابط الطبي وأرسل تقريرًا للجراح الجوي.", "items": ["ecg_device"]},
+        "e1": {"type": "end", "en": "Continue monitoring. Re-run this protocol if symptoms return.", "ar": "تابع المراقبة. أعد البروتوكول إن عادت الأعراض."}
+      }
+    },
+    "headache_vision": {
+      "title_en": "Headache + vision change", "title_ar": "صداع مع تغير الرؤية", "citation": ["nasa_sans_risk", "lee_2020"], "start": "q1",
+      "nodes": {
+        "q1": {"type": "question", "en": "Sudden severe headache, weakness, confusion, or loss of vision?", "ar": "صداع شديد مفاجئ، ضعف، ارتباك، أو فقدان الرؤية؟", "yes": "s1", "no": "a1"},
+        "s1": {"type": "stop", "en": "STOP – call CMO immediately (neurological emergency criteria).", "ar": "توقف – اتصل بالضابط الطبي فورًا (معايير طوارئ عصبية).", "items": []},
+        "a1": {"type": "action", "en": "Run the Eye of Truth screening (acuity, Amsler, contrast) and the symptom questionnaire.", "ar": "أجرِ فحص 'عين الحقيقة' (الحدة، شبكة أمسلر، التباين) واستبيان الأعراض.", "next": "q2"},
+        "q2": {"type": "question", "en": "Any new acuity loss, Amsler distortion, or near-vision blur?", "ar": "هل يوجد انخفاض جديد في الحدة أو تشوه في شبكة أمسلر أو تشوش في الرؤية القريبة؟", "yes": "s2", "no": "q3"},
+        "s2": {"type": "stop", "en": "STOP – CMO to perform onboard eye exam (OCT/fundus per schedule); queue for flight surgeon review. Possible SANS signs – not a diagnosis.", "ar": "توقف – الضابط الطبي يجري فحص العين (OCT/قاع العين)؛ أرسل للجراح الجوي. علامات محتملة لـ SANS – ليس تشخيصًا.", "items": []},
+        "q3": {"type": "question", "en": "Is cabin CO2 ≥ 2,600 ppm or sleep < 6 h?", "ar": "هل ثاني أكسيد الكربون ≥ 2600 أو النوم أقل من 6 ساعات؟", "yes": "a2", "no": "e1"},
+        "a2": {"type": "action", "en": "Report CO2 to crew/ECLSS; move to well-ventilated area; hydrate; prioritize sleep.", "ar": "أبلغ الطاقم عن ثاني أكسيد الكربون؛ انتقل لمنطقة جيدة التهوية؛ اشرب الماء؛ أعطِ أولوية للنوم.", "next": "e1"},
+        "e1": {"type": "end", "en": "Log symptom; repeat vision screening in 24 h.", "ar": "سجّل العرض؛ أعد فحص الرؤية بعد 24 ساعة."}
+      }
+    },
+    "fever": {
+      "title_en": "Fever", "title_ar": "الحمى", "citation": ["exmc_cdss_2022", "nasa_std_3001_v1"], "start": "q1",
+      "nodes": {
+        "q1": {"type": "question", "en": "Temperature ≥ 38.5 °C, or stiff neck, rash, breathlessness, or confusion?", "ar": "الحرارة ≥ 38.5 أو تيبس الرقبة أو طفح أو ضيق نفس أو ارتباك؟", "yes": "s1", "no": "a1"},
+        "s1": {"type": "stop", "en": "STOP – call CMO. Isolate per protocol; CMO decides on onboard kit use.", "ar": "توقف – اتصل بالضابط الطبي. اعزل حسب البروتوكول.", "items": ["medical_kit_per_protocol", "thermometer"]},
+        "a1": {"type": "action", "en": "Rest, hydrate (oral rehydration), re-measure temperature every 4 h.", "ar": "استرح، اشرب محلول الإماهة، أعد قياس الحرارة كل 4 ساعات.", "next": "q2", "items": ["oral_rehydration"]},
+        "q2": {"type": "question", "en": "Fever persists > 48 h or other crew have symptoms?", "ar": "هل استمرت الحمى أكثر من 48 ساعة أو ظهرت أعراض لدى الطاقم؟", "yes": "s1", "no": "e1"},
+        "e1": {"type": "end", "en": "Continue monitoring; report trend to flight surgeon in daily summary.", "ar": "تابع المراقبة؛ أرسل الاتجاه في الملخص اليومي."}
+      }
+    },
+    "hypoglycemia": {
+      "title_en": "Low blood glucose", "title_ar": "انخفاض سكر الدم", "citation": ["exmc_cdss_2022"], "start": "q1",
+      "nodes": {
+        "q1": {"type": "question", "en": "Is the person confused, unable to swallow safely, or unresponsive?", "ar": "هل الشخص مرتبك أو لا يستطيع البلع بأمان أو لا يستجيب؟", "yes": "s1", "no": "a1"},
+        "s1": {"type": "stop", "en": "STOP – call CMO now (do not give food/drink by mouth if unable to swallow).", "ar": "توقف – اتصل بالضابط الطبي الآن (لا تعطِ شيئًا بالفم إذا تعذر البلع).", "items": ["medical_kit_per_protocol"]},
+        "a1": {"type": "action", "en": "Give oral glucose per onboard protocol; re-check glucose in 15 min.", "ar": "أعطِ الجلوكوز الفموي حسب البروتوكول؛ أعد القياس بعد 15 دقيقة.", "next": "q2", "items": ["oral_glucose"]},
+        "q2": {"type": "question", "en": "Is glucose still < 70 mg/dL after 15 min?", "ar": "هل السكر ما زال أقل من 70 بعد 15 دقيقة؟", "yes": "s1", "no": "e1"},
+        "e1": {"type": "end", "en": "Eat a meal from the onboard menu; log event for flight surgeon.", "ar": "تناول وجبة من القائمة؛ سجّل الحدث للجراح الجوي."}
+      }
+    },
+    "insomnia": {
+      "title_en": "Insomnia / poor sleep", "title_ar": "الأرق / ضعف النوم", "citation": ["barger_2014", "ochmo_sleep_2023"], "start": "q1",
+      "nodes": {
+        "q1": {"type": "question", "en": "Fewer than 5 h sleep for 2+ nights AND a critical task (EVA, docking) within 24 h?", "ar": "أقل من 5 ساعات نوم لليلتين أو أكثر مع مهمة حرجة خلال 24 ساعة؟", "yes": "s1", "no": "a1"},
+        "s1": {"type": "stop", "en": "STOP – inform CMO and mission control about fatigue risk before the critical task.", "ar": "توقف – أبلغ الضابط الطبي ومركز التحكم عن خطر الإرهاق قبل المهمة الحرجة.", "items": []},
+        "a1": {"type": "action", "en": "Sleep hygiene: use crew schedule (not sunrise), cabin light dimming, sleep mask/earplugs, secure sleeping bag, avoid screens 1 h before sleep.", "ar": "نظافة النوم: اتبع جدول الطاقم، خفّض الإضاءة، قناع وسدادات، ثبّت كيس النوم، تجنّب الشاشات قبل النوم بساعة.", "next": "q2", "items": ["sleep_mask_earplugs"]},
+        "q2": {"type": "question", "en": "Still poor sleep after 3 nights?", "ar": "هل استمر ضعف النوم بعد 3 ليالٍ؟", "yes": "s2", "no": "e1"},
+        "s2": {"type": "stop", "en": "Call CMO – any sleep medication only per approved onboard protocol and flight-surgeon guidance.", "ar": "اتصل بالضابط الطبي – أي دواء للنوم فقط حسب البروتوكول المعتمد وتوجيه الجراح الجوي.", "items": ["medical_kit_per_protocol"]},
+        "e1": {"type": "end", "en": "Keep logging sleep; review weekly.", "ar": "واصل تسجيل النوم؛ راجع أسبوعيًا."}
+      }
+    },
+    "radiation_exposure": {
+      "title_en": "Radiation exposure / SPE", "title_ar": "التعرض الإشعاعي / عاصفة شمسية", "citation": ["george_2024", "nasa_artemis_rad", "nasa_std_3001_v1"], "start": "q1",
+      "nodes": {
+        "q1": {"type": "question", "en": "Is a solar particle event (SPE) alert active?", "ar": "هل يوجد تنبيه عاصفة جسيمات شمسية؟", "yes": "a1", "no": "q2"},
+        "a1": {"type": "action", "en": "Go to the recommended shelter zone NOW; build stowage-bag shelter (see Radiation Map checklist).", "ar": "اذهب إلى منطقة الملجأ الموصى بها الآن؛ ابنِ ملجأ أكياس التخزين (انظر قائمة خريطة الإشعاع).", "next": "q2", "items": ["dosimeter"]},
+        "q2": {"type": "question", "en": "Nausea, vomiting, or skin redness after exposure?", "ar": "غثيان أو قيء أو احمرار الجلد بعد التعرض؟", "yes": "s1", "no": "e1"},
+        "s1": {"type": "stop", "en": "STOP – call CMO; record dosimeter reading and time of symptom onset.", "ar": "توقف – اتصل بالضابط الطبي؛ سجّل قراءة مقياس الجرعة ووقت بدء الأعراض.", "items": ["dosimeter", "medical_kit_per_protocol"]},
+        "e1": {"type": "end", "en": "Log dosimeter reading; cumulative dose updated.", "ar": "سجّل قراءة مقياس الجرعة؛ تم تحديث الجرعة التراكمية."}
+      }
+    },
+    "post_landing_dizziness": {
+      "title_en": "Post-landing dizziness", "title_ar": "الدوار بعد الهبوط", "citation": ["hrp_oi_2015"], "start": "q1",
+      "nodes": {
+        "q1": {"type": "question", "en": "Did the person faint, or is systolic < 90 mmHg?", "ar": "هل حدث إغماء أو الانقباضي أقل من 90؟", "yes": "s1", "no": "a1"},
+        "s1": {"type": "stop", "en": "STOP – lie supine, legs raised; call CMO.", "ar": "توقف – استلقِ على الظهر وارفع الساقين؛ اتصل بالضابط الطبي.", "items": ["compression_garment", "oral_rehydration"]},
+        "a1": {"type": "action", "en": "Sit down; keep compression garment on; oral fluids with salt per protocol.", "ar": "اجلس؛ أبقِ الملابس الضاغطة؛ سوائل مع ملح حسب البروتوكول.", "next": "q2", "items": ["compression_garment", "oral_rehydration"]},
+        "q2": {"type": "question", "en": "Seated stand test: HR rise > 30 bpm or systolic drop > 20 mmHg?", "ar": "اختبار الوقوف: ارتفاع النبض > 30 أو انخفاض الانقباضي > 20؟", "yes": "s2", "no": "e1"},
+        "s2": {"type": "stop", "en": "Orthostatic intolerance signal – no unassisted standing/EVA; inform CMO and flight surgeon.", "ar": "مؤشر عدم تحمل الانتصاب – لا وقوف أو مهام خارجية دون مساعدة؛ أبلغ الضابط الطبي والجراح الجوي.", "items": []},
+        "e1": {"type": "end", "en": "Repeat stand test at +24 h.", "ar": "أعد اختبار الوقوف بعد 24 ساعة."}
+      }
+    }
+  }
+}

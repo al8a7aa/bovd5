@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1735">
+<meta name="description" content="BÖVD – منصة علمية لفحوصات رواد الفضاء ومتابعة حالتهم الفسيولوجية">
+<title>BÖVD</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Splash: animated BÖVD intro (skippable, reduced-motion aware) -->
+<div id="splash" role="dialog" aria-label="BÖVD">
+  <div class="stage" id="splashStage"></div>
+  <p class="tag" id="splashTag"></p>
+  <button class="skip ghost" id="splashSkip" type="button">تخطي ›</button>
+</div>
+<div id="alarm" class="alarm" role="alert" aria-live="assertive"></div>
+<div id="offline" class="offline" role="status"></div>
+<div class="shell" id="shell">
+  <aside class="sidebar" id="sidebar" aria-label="القائمة">
+    <div class="brandbar"><span id="brandMark"></span><div><b>BÖVD</b><small id="tagline"></small></div></div>
+    <div class="omani-band" aria-hidden="true"></div>
+    <nav id="nav" aria-label="Main"></nav>
+    <div class="foot" id="sideFoot"></div>
+  </aside>
+  <div class="content">
+    <header class="topbar">
+      <button class="small ghost menu-btn" id="menuBtn" aria-label="القائمة" aria-expanded="false"></button>
+      <span class="title" id="pageTitle">BÖVD</span>
+      <span class="chip hide-sm" id="ctxChip" title="Gravity context"></span>
+      <span class="chip hide-sm" id="delayChip" title="One-way comm delay"></span>
+      <select id="crewSel" aria-label="رائد الفضاء" style="display:none"></select>
+      <button class="small ghost" id="langBtn" aria-label="اللغة"></button>
+      <button class="small ghost" id="themeBtn" aria-label="الوضع الليلي"></button>
+      <button class="small ghost" id="hcBtn" aria-label="تباين عالٍ"></button>
+      <button class="small ghost" id="bigBtn" aria-label="وضع القفازات"></button>
+      <span class="chip" id="userChip"></span>
+      <button class="small ghost" id="logoutBtn" aria-label="خروج" style="display:none"></button>
+    </header>
+    <main id="main" tabindex="-1"></main>
+  </div>
+</div>
+<nav class="bottomnav" id="bottomnav" aria-label="تنقل سريع"></nav>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="brand.js"></script>
+<script src="motion.js"></script>
+<script src="i18n.js"></script>
+<script src="body3d.js"></script>
+<script src="app.js"></script>
+<script src="voice.js"></script>
+<script src="features.js"></script>
+<script src="pose.js"></script>
+<script src="science.js"></script>
+<script src="tour.js"></script>
+</body>
+</html>

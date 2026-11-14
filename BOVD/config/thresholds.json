@@ -1,0 +1,558 @@
+{
+  "_note": "Default Earth-reference thresholds. Applied AFTER the personal-baseline check (microgravity rule 1). EVERY value is a configurable default that MUST be reviewed by a flight surgeon before any operational use. Rules are evaluated red first, then yellow, else green. Operators: lt, le, gt, ge.",
+  "_review_status": "REVIEW NEEDED – not approved by a flight surgeon",
+  "baseline": {
+    "sd_multiplier": 2.0,
+    "min_points": 5,
+    "window_days": 7,
+    "citation": [
+      "hrp_oi_2015",
+      "nasa_cv_risk"
+    ],
+    "rationale": "Personal baseline first. In 0 g the reference is the astronaut's own EARLY-FLIGHT readings (first 7 days in 0 g, after the ~2 L headward fluid shift); in 1 g / partial g it is the PRE-FLIGHT baseline. Outside mean ± 2 SD = 'differs from your baseline'.",
+    "soften_yellow_within_baseline": true,
+    "_soften_note": "If a value is inside the personal baseline band, an Earth-range YELLOW is shown as GREEN with a note (avoids false alarms from expected 0 g shifts). RED is NEVER softened."
+  },
+  "indicators": {
+    "heart_rate": {
+      "label_en": "Heart rate",
+      "label_ar": "نبض القلب",
+      "loinc": "8867-4",
+      "ucum": "/min",
+      "unit": "bpm",
+      "region": "heart",
+      "valid_range": [
+        20,
+        250
+      ],
+      "red_if": [
+        {
+          "lt": 50
+        },
+        {
+          "gt": 120
+        }
+      ],
+      "yellow_if": [
+        {
+          "lt": 60
+        },
+        {
+          "gt": 100
+        }
+      ],
+      "citation": [
+        "clinical_default"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-DEF-01",
+        "E-CV-05"
+      ]
+    },
+    "spo2": {
+      "label_en": "Oxygen saturation",
+      "label_ar": "تشبع الأكسجين",
+      "loinc": "59408-5",
+      "ucum": "%",
+      "unit": "%",
+      "region": "lungs",
+      "valid_range": [
+        50,
+        100
+      ],
+      "red_if": [
+        {
+          "le": 90
+        }
+      ],
+      "yellow_if": [
+        {
+          "lt": 95
+        }
+      ],
+      "citation": [
+        "clinical_default"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-DEF-01",
+        "E-EQ-03"
+      ]
+    },
+    "systolic": {
+      "label_en": "Systolic blood pressure",
+      "label_ar": "الضغط الانقباضي",
+      "loinc": "8480-6",
+      "ucum": "mm[Hg]",
+      "unit": "mmHg",
+      "region": "heart",
+      "valid_range": [
+        50,
+        260
+      ],
+      "red_if": [
+        {
+          "ge": 160
+        },
+        {
+          "lt": 90
+        }
+      ],
+      "yellow_if": [
+        {
+          "ge": 130
+        }
+      ],
+      "citation": [
+        "clinical_default",
+        "hrp_oi_2015"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-DEF-01",
+        "E-CV-04",
+        "E-OI-01"
+      ]
+    },
+    "diastolic": {
+      "label_en": "Diastolic blood pressure",
+      "label_ar": "الضغط الانبساطي",
+      "loinc": "8462-4",
+      "ucum": "mm[Hg]",
+      "unit": "mmHg",
+      "region": "heart",
+      "valid_range": [
+        30,
+        160
+      ],
+      "red_if": [
+        {
+          "ge": 100
+        }
+      ],
+      "yellow_if": [
+        {
+          "ge": 85
+        }
+      ],
+      "citation": [
+        "clinical_default"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-DEF-01",
+        "E-CV-04"
+      ]
+    },
+    "body_temp": {
+      "label_en": "Body temperature",
+      "label_ar": "حرارة الجسم",
+      "loinc": "8310-5",
+      "ucum": "Cel",
+      "unit": "°C",
+      "region": "blood",
+      "valid_range": [
+        30,
+        43
+      ],
+      "red_if": [
+        {
+          "ge": 38.5
+        },
+        {
+          "lt": 35.5
+        }
+      ],
+      "yellow_if": [
+        {
+          "ge": 37.6
+        },
+        {
+          "lt": 36.1
+        }
+      ],
+      "citation": [
+        "clinical_default"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-DEF-01"
+      ]
+    },
+    "glucose": {
+      "label_en": "Blood glucose",
+      "label_ar": "سكر الدم",
+      "loinc": "2339-0",
+      "ucum": "mg/dL",
+      "unit": "mg/dL",
+      "region": "blood",
+      "valid_range": [
+        20,
+        600
+      ],
+      "red_if": [
+        {
+          "lt": 54
+        },
+        {
+          "gt": 250
+        }
+      ],
+      "yellow_if": [
+        {
+          "lt": 70
+        },
+        {
+          "gt": 140
+        }
+      ],
+      "citation": [
+        "clinical_default"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-DEF-01"
+      ]
+    },
+    "sleep_hours": {
+      "label_en": "Sleep duration",
+      "label_ar": "مدة النوم",
+      "loinc": "93832-4",
+      "ucum": "h",
+      "unit": "h",
+      "region": "brain",
+      "valid_range": [
+        0,
+        16
+      ],
+      "red_if": [
+        {
+          "lt": 5
+        }
+      ],
+      "yellow_if": [
+        {
+          "lt": 7
+        }
+      ],
+      "consecutive_yellow_to_red": 3,
+      "citation": [
+        "barger_2014",
+        "ochmo_sleep_2023"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-SLEEP-01",
+        "E-SLEEP-02"
+      ]
+    },
+    "sleep_quality": {
+      "label_en": "Sleep quality (1–5)",
+      "label_ar": "جودة النوم (1–5)",
+      "loinc": null,
+      "ucum": "{score}",
+      "unit": "1–5",
+      "region": "brain",
+      "valid_range": [
+        1,
+        5
+      ],
+      "red_if": [],
+      "yellow_if": [
+        {
+          "le": 2
+        }
+      ],
+      "citation": [
+        "clinical_default",
+        "barger_2014"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-DEF-01"
+      ]
+    },
+    "mood": {
+      "label_en": "Mood (1–5, 5 = best)",
+      "label_ar": "المزاج (1–5)",
+      "loinc": null,
+      "ucum": "{score}",
+      "unit": "1–5",
+      "region": "brain",
+      "valid_range": [
+        1,
+        5
+      ],
+      "red_if": [],
+      "yellow_if": [
+        {
+          "le": 2
+        }
+      ],
+      "trend_decline_days": 3,
+      "sharp_drop": 2,
+      "citation": [
+        "clinical_default",
+        "hrp_bmed_2015",
+        "picano_2024"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-DEF-01"
+      ]
+    },
+    "stress": {
+      "label_en": "Stress (1–5, 5 = worst)",
+      "label_ar": "الضغط النفسي (1–5)",
+      "loinc": null,
+      "ucum": "{score}",
+      "unit": "1–5",
+      "region": "brain",
+      "valid_range": [
+        1,
+        5
+      ],
+      "red_if": [],
+      "yellow_if": [
+        {
+          "ge": 4
+        }
+      ],
+      "citation": [
+        "clinical_default",
+        "hrp_bmed_2015",
+        "picano_2024"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-DEF-01"
+      ]
+    },
+    "workload": {
+      "label_en": "Workload (1–5)",
+      "label_ar": "عبء العمل (1–5)",
+      "loinc": null,
+      "ucum": "{score}",
+      "unit": "1–5",
+      "region": "brain",
+      "valid_range": [
+        1,
+        5
+      ],
+      "red_if": [],
+      "yellow_if": [
+        {
+          "ge": 5
+        }
+      ],
+      "citation": [
+        "clinical_default",
+        "hrp_bmed_2015"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-DEF-01"
+      ]
+    },
+    "radiation_pct": {
+      "label_en": "Radiation dose vs limit",
+      "label_ar": "الجرعة الإشعاعية مقابل الحد",
+      "loinc": null,
+      "ucum": "%",
+      "unit": "% of limit",
+      "region": "skin",
+      "valid_range": [
+        0,
+        1000
+      ],
+      "red_if": [
+        {
+          "ge": 80
+        }
+      ],
+      "yellow_if": [
+        {
+          "ge": 50
+        }
+      ],
+      "citation": [
+        "nasa_std_3001_v1",
+        "george_2024"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-RAD-01",
+        "E-RAD-02"
+      ]
+    },
+    "cabin_co2": {
+      "label_en": "Cabin CO2",
+      "label_ar": "ثاني أكسيد الكربون في المقصورة",
+      "loinc": null,
+      "ucum": "[ppm]",
+      "unit": "ppm",
+      "region": "lungs",
+      "valid_range": [
+        0,
+        50000
+      ],
+      "red_if": [
+        {
+          "gt": 3947
+        }
+      ],
+      "yellow_if": [
+        {
+          "ge": 3290
+        }
+      ],
+      "citation": [
+        "nasa_std_3001_v2"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-CO2-01",
+        "E-CO2-02"
+      ],
+      "evaluation": "partial_pressure",
+      "_rule_note": "Evaluated as CO2 partial pressure at the current cabin pressure: >3 mmHg red [V2 6004], ≥2.5 mmHg yellow (7-day headache guidance, OCHMO-TB-004). The ppm rules shown are the sea-level (101.3 kPa) equivalents."
+    },
+    "body_mass": {
+      "label_en": "Body mass (mass-measurement device)",
+      "label_ar": "الكتلة (جهاز قياس الكتلة)",
+      "loinc": "29463-7",
+      "ucum": "kg",
+      "unit": "kg",
+      "region": "bones",
+      "valid_range": [
+        30,
+        200
+      ],
+      "red_if": [],
+      "yellow_if": [],
+      "pct_loss_yellow": 3,
+      "pct_loss_red": 5,
+      "citation": [
+        "clinical_default"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-DEF-01"
+      ]
+    },
+    "exercise_min": {
+      "label_en": "Exercise minutes (vs plan)",
+      "label_ar": "دقائق التمرين (مقابل الخطة)",
+      "loinc": null,
+      "ucum": "min",
+      "unit": "min",
+      "region": "bones",
+      "valid_range": [
+        0,
+        600
+      ],
+      "red_if": [],
+      "yellow_if": [],
+      "citation": [
+        "scott_2023",
+        "english_2020"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-BONE-02"
+      ]
+    },
+    "urine_sg": {
+      "label_en": "Urine specific gravity",
+      "label_ar": "الكثافة النوعية للبول",
+      "loinc": "2965-2",
+      "ucum": "1",
+      "unit": "",
+      "region": "kidneys",
+      "valid_range": [
+        1.0,
+        1.05
+      ],
+      "red_if": [
+        {
+          "ge": 1.035
+        }
+      ],
+      "yellow_if": [
+        {
+          "ge": 1.025
+        }
+      ],
+      "citation": [
+        "clinical_default",
+        "smith_2012"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-DEF-01",
+        "E-NUT-01"
+      ]
+    },
+    "urine_calcium": {
+      "label_en": "Urinary calcium (24 h)",
+      "label_ar": "كالسيوم البول (24 ساعة)",
+      "loinc": "6874-3",
+      "ucum": "mg/(24.h)",
+      "unit": "mg/day",
+      "region": "kidneys",
+      "valid_range": [
+        0,
+        1000
+      ],
+      "red_if": [
+        {
+          "gt": 300
+        }
+      ],
+      "yellow_if": [
+        {
+          "gt": 250
+        }
+      ],
+      "citation": [
+        "smith_1999",
+        "smith_2012"
+      ],
+      "review_needed": true,
+      "evidence": [
+        "E-CA-01",
+        "E-DEF-01"
+      ]
+    }
+  },
+  "orthostatic_stand_test": {
+    "hr_rise_yellow": 30,
+    "systolic_drop_yellow": 20,
+    "citation": [
+      "hrp_oi_2015"
+    ],
+    "review_needed": true
+  },
+  "radiation": {
+    "career_limit_msv": 600,
+    "_limit_note": "600 mSv career limit verified: NASA-STD-3001 Vol.1 [V1 4030] (evidence E-RAD-01). The 50 %/80 % warning levels are app defaults.",
+    "citation": [
+      "nasa_std_3001_v1"
+    ],
+    "review_needed": true
+  },
+  "composite": {
+    "_note": "Composite score 0–20 (higher = more concern). Each indicator contributes green 0 / yellow 1 / red 3; baseline deviation adds 1; capped at 20.",
+    "weights": {
+      "green": 0,
+      "yellow": 1,
+      "red": 3,
+      "baseline_dev": 1
+    },
+    "bands": {
+      "green_max": 3,
+      "yellow_max": 8
+    }
+  }
+}

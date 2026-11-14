@@ -1,0 +1,115 @@
+{
+ "contrast": {
+  "light": {
+   "ink/bg": 15.57,
+   "ink/surface": 17.19,
+   "muted/surface": 5.87,
+   "muted/surface2": 5.52,
+   "accent-ink/info-bg": 5.36,
+   "green/green-bg": 4.37,
+   "amber/amber-bg": 4.12,
+   "red/red-bg": 4.59,
+   "btn-primary": 5.94,
+   "link/surface": 5.97
+  },
+  "dark": {
+   "ink/bg": 17.49,
+   "muted/surface": 7.82,
+   "accent-ink/info-bg": 9.9,
+   "green/green-bg": 7.61,
+   "amber/amber-bg": 8.57,
+   "red/red-bg": 6.41,
+   "link/surface": 11.5
+  }
+ },
+ "pages": {
+  "dashboard": {
+   "unlabeled": [],
+   "n_unlabeled": 0,
+   "small_targets": 0,
+   "h2": true,
+   "lang": "ar",
+   "dir": "rtl"
+  },
+  "body3d": {
+   "unlabeled": [],
+   "n_unlabeled": 0,
+   "small_targets": 0,
+   "h2": true,
+   "lang": "ar",
+   "dir": "rtl"
+  },
+  "measure": {
+   "unlabeled": [],
+   "n_unlabeled": 0,
+   "small_targets": 0,
+   "h2": true,
+   "lang": "ar",
+   "dir": "rtl"
+  },
+  "posecheck": {
+   "unlabeled": [],
+   "n_unlabeled": 0,
+   "small_targets": 0,
+   "h2": true,
+   "lang": "ar",
+   "dir": "rtl"
+  },
+  "simulate": {
+   "unlabeled": [],
+   "n_unlabeled": 0,
+   "small_targets": 0,
+   "h2": true,
+   "lang": "ar",
+   "dir": "rtl"
+  },
+  "science": {
+   "unlabeled": [],
+   "n_unlabeled": 0,
+   "small_targets": 0,
+   "h2": true,
+   "lang": "ar",
+   "dir": "rtl"
+  },
+  "history": {
+   "unlabeled": [],
+   "n_unlabeled": 0,
+   "small_targets": 0,
+   "h2": true,
+   "lang": "ar",
+   "dir": "rtl"
+  },
+  "settings": {
+   "unlabeled": [],
+   "n_unlabeled": 0,
+   "small_targets": 0,
+   "h2": true,
+   "lang": "ar",
+   "dir": "rtl"
+  },
+  "help": {
+   "unlabeled": [],
+   "n_unlabeled": 0,
+   "small_targets": 0,
+   "h2": true,
+   "lang": "ar",
+   "dir": "rtl"
+  },
+  "keyboard_nav_enter": "charts",
+  "tab_order_sample": [
+   "SELECT#chInd",
+   "BUTTON#",
+   "BUTTON#",
+   "BUTTON#",
+   "A#",
+   "A#",
+   "A#simulate",
+   "BODY#",
+   "BUTTON#dashboard",
+   "BUTTON#body3d",
+   "BUTTON#measure",
+   "BUTTON#posecheck"
+  ],
+  "focus_ring_css": true
+ }
+}

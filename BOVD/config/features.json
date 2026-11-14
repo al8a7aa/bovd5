@@ -1,0 +1,296 @@
+{
+  "_note": "Feature flags and feature configuration. A feature that is disabled, or whose consent is not granted, MUST NOT collect any data (enforced in astra/consent.py and tested in tests/test_consent.py).",
+  "flags": {
+    "F1_voice": {
+      "enabled": true,
+      "experimental": true,
+      "consent_category": "voice_features",
+      "dehydration_hypothesis": false
+    },
+    "F2_vision": {
+      "enabled": true,
+      "experimental": false,
+      "consent_category": "vision",
+      "webcam_blink_experimental": true
+    },
+    "F3_crew": {
+      "enabled": true,
+      "experimental": false,
+      "consent_category": "crew_interaction"
+    },
+    "F4_cdss": {
+      "enabled": true,
+      "experimental": false,
+      "consent_category": "core_health"
+    },
+    "F5_radiation": {
+      "enabled": true,
+      "experimental": false,
+      "consent_category": "radiation"
+    },
+    "F6_urine": {
+      "enabled": true,
+      "experimental": false,
+      "consent_category": "urine"
+    },
+    "F7_coach": {
+      "enabled": true,
+      "experimental": false,
+      "consent_category": "core_health"
+    },
+    "F8_connection": {
+      "enabled": true,
+      "experimental": false,
+      "consent_category": "connection"
+    },
+    "F9_blackbox": {
+      "enabled": true,
+      "experimental": false,
+      "consent_category": "core_health"
+    },
+    "F10_pose": {
+      "enabled": true,
+      "experimental": false,
+      "consent_category": "pose_camera"
+    }
+  },
+  "consent_categories": {
+    "core_health": {
+      "en": "Core health readings (vitals, sleep, mood)",
+      "ar": "القراءات الصحية الأساسية"
+    },
+    "voice_features": {
+      "en": "Voice prosodic features (no raw audio stored)",
+      "ar": "خصائص الصوت (لا يُحفظ الصوت الخام)"
+    },
+    "vision": {
+      "en": "Vision screening results and eye images",
+      "ar": "نتائج فحص الرؤية وصور العين"
+    },
+    "webcam_blink": {
+      "en": "Webcam blink-rate (EXPERIMENTAL, numbers only)",
+      "ar": "معدل الرمش عبر الكاميرا (تجريبي، أرقام فقط)"
+    },
+    "crew_interaction": {
+      "en": "Interaction metadata (no conversation content)",
+      "ar": "بيانات التفاعل الوصفية (بلا محتوى المحادثات)"
+    },
+    "radiation": {
+      "en": "Dosimeter readings",
+      "ar": "قراءات مقياس الجرعة"
+    },
+    "urine": {
+      "en": "Urinalysis results",
+      "ar": "نتائج تحليل البول"
+    },
+    "connection": {
+      "en": "Helped / did not help ratings for family media",
+      "ar": "تقييم 'ساعد/لم يساعد' لوسائط العائلة"
+    },
+    "research_export": {
+      "en": "Pseudonymised research export",
+      "ar": "التصدير البحثي بأسماء مستعارة"
+    },
+    "pose_camera": {
+      "en": "Camera posture check (frames processed in memory, never stored)",
+      "ar": "التحقق من الوضعية بالكاميرا (الإطارات تُعالج في الذاكرة ولا تُحفظ)"
+    }
+  },
+  "coach": {
+    "_note": "Flight-surgeon-approved prescription bounds (EXAMPLE values – review needed). The coach may only adjust within [min, max].",
+    "prescription": {
+      "ared_min": {
+        "default": 45,
+        "min": 30,
+        "max": 60
+      },
+      "treadmill_min": {
+        "default": 30,
+        "min": 15,
+        "max": 45
+      },
+      "cycle_min": {
+        "default": 30,
+        "min": 15,
+        "max": 45
+      }
+    },
+    "citation": [
+      "scott_2023",
+      "english_2020"
+    ],
+    "onboard_menu": [
+      {
+        "id": "m1",
+        "name_en": "Yogurt + granola",
+        "name_ar": "زبادي مع جرانولا",
+        "calcium_mg": 300,
+        "vitd_iu": 80,
+        "protein_g": 12,
+        "sodium_mg": 120,
+        "kcal": 320
+      },
+      {
+        "id": "m2",
+        "name_en": "Salmon + rice",
+        "name_ar": "سلمون مع أرز",
+        "calcium_mg": 40,
+        "vitd_iu": 500,
+        "protein_g": 28,
+        "sodium_mg": 450,
+        "kcal": 520
+      },
+      {
+        "id": "m3",
+        "name_en": "Beef stew",
+        "name_ar": "يخنة لحم",
+        "calcium_mg": 30,
+        "vitd_iu": 0,
+        "protein_g": 25,
+        "sodium_mg": 900,
+        "kcal": 450
+      },
+      {
+        "id": "m4",
+        "name_en": "Tortilla + cheese + beans",
+        "name_ar": "تورتيلا مع جبن وفول",
+        "calcium_mg": 250,
+        "vitd_iu": 10,
+        "protein_g": 18,
+        "sodium_mg": 700,
+        "kcal": 480
+      },
+      {
+        "id": "m5",
+        "name_en": "Fortified milk drink",
+        "name_ar": "مشروب حليب مدعّم",
+        "calcium_mg": 350,
+        "vitd_iu": 120,
+        "protein_g": 9,
+        "sodium_mg": 110,
+        "kcal": 160
+      },
+      {
+        "id": "m6",
+        "name_en": "Nuts + dried fruit",
+        "name_ar": "مكسرات وفواكه مجففة",
+        "calcium_mg": 60,
+        "vitd_iu": 0,
+        "protein_g": 6,
+        "sodium_mg": 40,
+        "kcal": 300
+      },
+      {
+        "id": "m7",
+        "name_en": "Chicken + vegetables",
+        "name_ar": "دجاج مع خضار",
+        "calcium_mg": 50,
+        "vitd_iu": 10,
+        "protein_g": 30,
+        "sodium_mg": 500,
+        "kcal": 410
+      },
+      {
+        "id": "m8",
+        "name_en": "Oatmeal + almonds",
+        "name_ar": "شوفان مع لوز",
+        "calcium_mg": 120,
+        "vitd_iu": 0,
+        "protein_g": 10,
+        "sodium_mg": 150,
+        "kcal": 350
+      }
+    ],
+    "daily_targets": {
+      "calcium_mg": 1000,
+      "vitd_iu": 800,
+      "protein_g": 90,
+      "sodium_mg_max": 3000,
+      "_note": "kcal 3035 = NASA-STD-3001 V2 7003 design average (evidence E-NUT-02). Other nutrient targets are example values – review needed. [CITATION NEEDED] for in-flight calcium/vitamin D/protein targets.",
+      "kcal": 3035
+    }
+  },
+  "radiation_habitat": {
+    "_note": "Example floor plan with configurable RELATIVE shielding factors (1.0 = unshielded reference). Not real vehicle data.",
+    "zones": [
+      {
+        "id": "z1",
+        "name_en": "Lab module",
+        "name_ar": "وحدة المختبر",
+        "x": 0,
+        "y": 0,
+        "w": 3,
+        "h": 2,
+        "shield": 1.0
+      },
+      {
+        "id": "z2",
+        "name_en": "Galley",
+        "name_ar": "المطبخ",
+        "x": 3,
+        "y": 0,
+        "w": 2,
+        "h": 2,
+        "shield": 0.9
+      },
+      {
+        "id": "z3",
+        "name_en": "Crew quarters",
+        "name_ar": "غرف الطاقم",
+        "x": 5,
+        "y": 0,
+        "w": 3,
+        "h": 2,
+        "shield": 0.6
+      },
+      {
+        "id": "z4",
+        "name_en": "Storm shelter (water wall)",
+        "name_ar": "ملجأ العاصفة (جدار الماء)",
+        "x": 2,
+        "y": 2,
+        "w": 3,
+        "h": 2,
+        "shield": 0.3
+      },
+      {
+        "id": "z5",
+        "name_en": "Airlock",
+        "name_ar": "غرفة معادلة الضغط",
+        "x": 0,
+        "y": 2,
+        "w": 2,
+        "h": 2,
+        "shield": 1.2
+      },
+      {
+        "id": "z6",
+        "name_en": "Stowage",
+        "name_ar": "التخزين",
+        "x": 5,
+        "y": 2,
+        "w": 3,
+        "h": 2,
+        "shield": 0.5
+      }
+    ],
+    "shelter_checklist_en": [
+      "Move to the storm shelter zone",
+      "Stack water bags and stowage bags around the sleeping position (largest mass toward the outer hull)",
+      "Keep the personal dosimeter on",
+      "Bring water, food, and comm device",
+      "Stay until the all-clear from mission control"
+    ],
+    "shelter_checklist_ar": [
+      "انتقل إلى منطقة ملجأ العاصفة",
+      "رصّ أكياس الماء والتخزين حول موضع النوم (الكتلة الأكبر نحو الجدار الخارجي)",
+      "أبقِ مقياس الجرعة الشخصي",
+      "خذ الماء والطعام وجهاز الاتصال",
+      "ابقَ حتى إشارة الأمان من مركز التحكم"
+    ],
+    "citation": [
+      "george_2024",
+      "nasa_artemis_rad"
+    ]
+  }
+}
