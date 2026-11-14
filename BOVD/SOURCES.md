@@ -66,7 +66,8 @@
 ## مجموعات البيانات
 | المصدر | الرقم | الرابط | الترخيص | الحقول | التحويل |
 |---|---|---|---|---|---|
-| مستودع ناسا OSDR | OSD-n يختاره الفريق (غير مضمّن) | https://osdr.nasa.gov | بيانات ناسا المفتوحة + توثيق الدراسة | حسب mapping.json | CSV ← قراءة FHIR، REAL(OSD-n) |
+| مستودع ناسا OSDR – لوحة الأيض لطاقم SpaceX Inspiration4 (مضمّنة) | OSD-575 | https://osdr.nasa.gov/bio/repo/data/studies/OSD-575 | بيانات ناسا المفتوحة – “Data are courtesy of the NASA Open Science Data Repository”؛ الدراسة: Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y | عمود الجلوكوز من LSDS-8_Comprehensive_Metabolic_Panel_CMP_TRANSFORMED.csv؛ 4 أفراد × 7 نقاط زمنية = 28 قيمة | scripts/build_osd575.py: تسميات الأيام L-n و R+n ← تواريخ من الإطلاق 2021-09-16 والعودة 2021-09-18 (12:00 UTC)؛ عينات L- ← earth_preflight وعينات R+ ← earth_postflight؛ CSV ← قراءة FHIR، REAL(OSD-575) |
+| مستودع ناسا OSDR (أي دراسة أخرى) | OSD-n يختاره الفريق | https://osdr.nasa.gov | بيانات ناسا المفتوحة + توثيق الدراسة | حسب mapping.json | CSV ← قراءة FHIR، REAL(OSD-n) |
 | بوابة ناسا لعلوم الحياة | بعد طلب البيانات | https://nlsp.nasa.gov | حسب الاتفاقية | حسب mapping.json | نفس الطريقة |
 | مولّد البيانات المُصطنعة | 10 سيناريوهات | astra/synthetic.py | المشروع | كل المؤشرات | SYNTHETIC(السيناريو) |
 

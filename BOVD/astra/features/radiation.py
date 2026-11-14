@@ -25,7 +25,7 @@ from ..consent import require
 from ..storage import Store
 
 #: Example background dose rates (mSv/day) – synthetic, order-of-magnitude only.
-BASE_RATE_MSV_DAY = {"earth_preflight": 0.01, "iss": 0.5, "mars_transit": 1.8, "lunar_surface": 1.4,
+BASE_RATE_MSV_DAY = {"earth_preflight": 0.01, "earth_postflight": 0.01, "iss": 0.5, "mars_transit": 1.8, "lunar_surface": 1.4,
                      "mars_surface": 0.7, "rover": 0.8}
 SPE_MULTIPLIER = 50.0
 

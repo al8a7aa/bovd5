@@ -115,6 +115,18 @@ def test_every_threshold_links_to_evidence() -> None:
         assert set(ind["evidence"]) <= ids, k
 
 
+def test_bundled_real_osdr_data_is_tagged_and_cited() -> None:
+    import json
+
+    path = config.ROOT / "data" / "real" / "OSD-575" / "OSD-575_glucose.fhir.json"
+    obs = [e["resource"] for e in json.loads(path.read_text(encoding="utf-8"))["entry"]]
+    assert len(obs) == 28
+    for o in obs:
+        assert o["meta"]["tag"][0]["code"] == "REAL" and o["meta"]["tag"][0]["display"] == "OSD-575"
+        assert o["subject"]["reference"].startswith("Patient/OSD-575-C00")
+        assert "10.1038/s41586-024-07639-y" in json.dumps(o)
+
+
 def test_clinical_defaults_not_attributed_to_nasa() -> None:
     for k in ("heart_rate", "spo2", "systolic", "body_temp", "glucose"):
         assert config.thresholds()["indicators"][k]["citation"][0] == "clinical_default"

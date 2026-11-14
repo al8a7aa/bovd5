@@ -1,7 +1,9 @@
 # REAL data ingest (data/ingest)
 
-The prototype ships **without any real dataset**. Nothing in this repository is invented and labelled REAL.
-REAL provenance appears only after you download a dataset yourself and map it with the loader.
+The prototype bundles one real dataset: **NASA OSDR OSD-575** (SpaceX Inspiration4 serum glucose, 4 crew × 7 time points),
+built with `scripts/build_osd575.py` and loaded on first start. See `data/real/OSD-575/README.md`.
+Nothing in this repository is invented and labelled REAL. Other studies get REAL provenance only after you download
+and map them with the loader below.
 
 | Source | ID / URL | License / access | Fields used | Transformation |
 |---|---|---|---|---|

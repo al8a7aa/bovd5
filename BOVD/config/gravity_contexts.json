@@ -3,6 +3,8 @@
   "contexts": {
     "earth_preflight": {"label_en": "Earth (pre-flight)", "label_ar": "الأرض (قبل الرحلة)", "g": 1.0, "delay_s": [0, 0], "standing_tests": true, "baseline_phase": "preflight",
       "advice_en": "Collect pre-flight baseline: same time of day, seated, 5-minute rest.", "advice_ar": "اجمع خط الأساس قبل الرحلة: نفس الوقت يوميًا، جالسًا، راحة 5 دقائق."},
+    "earth_postflight": {"label_en": "Earth (post-flight)", "label_ar": "الأرض (بعد الرحلة)", "g": 1.0, "delay_s": [0, 0], "standing_tests": true, "baseline_phase": "postflight",
+      "advice_en": "Recovery after return: compare with the pre-flight baseline; watch for orthostatic symptoms in the first days.", "advice_ar": "التعافي بعد العودة: قارن بخط الأساس قبل الرحلة؛ راقب أعراض الدوار عند الوقوف في الأيام الأولى."},
     "iss": {"label_en": "ISS (0 g, LEO)", "label_ar": "محطة الفضاء الدولية (0 g)", "g": 0.0, "delay_s": [0, 1], "standing_tests": false, "baseline_phase": "inflight",
       "advice_en": "0 g: headward fluid shift. Follow ARED/treadmill/cycle prescription. ~16 sunrises/day — follow the crew schedule for sleep.", "advice_ar": "انعدام الجاذبية: انتقال السوائل نحو الرأس. التزم بوصفة ARED والمشي والدراجة. نحو 16 شروقًا يوميًا — اتبع جدول الطاقم للنوم."},
     "mars_transit": {"label_en": "Mars transit (0 g)", "label_ar": "العبور إلى المريخ (0 g)", "g": 0.0, "delay_s": [240, 1440], "standing_tests": false, "baseline_phase": "inflight",

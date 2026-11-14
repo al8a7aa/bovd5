@@ -168,7 +168,30 @@ def seed_demo(store: Store, quick: bool = False) -> None:
         synthetic.generate(store, aid, DEMO_SCEN[aid], days=8 if quick else 14)
         store.set_consent(aid, "webcam_blink", False, "seed")
     store.set_consent("A4", "research_export", False, "seed")
+    n = seed_real(store)
+    if n:
+        print(f"[BÖVD]   REAL data: {n} observations from NASA OSDR OSD-575 (Inspiration4)", flush=True)
     print("[BÖVD] Seed complete.", flush=True)
+
+
+REAL_BUNDLES = [config.ROOT / "data" / "real" / "OSD-575" / "OSD-575_glucose.fhir.json"]
+
+
+def seed_real(store: Store) -> int:
+    """Load the bundled REAL NASA OSDR data (built by scripts/build_osd575.py), if present."""
+    n = 0
+    for path in REAL_BUNDLES:
+        if not path.exists():
+            continue
+        bundle = json.loads(path.read_text(encoding="utf-8"))
+        for e in bundle.get("entry", []):
+            r = e["resource"]
+            aid = r["subject"]["reference"].split("/", 1)[1]
+            crew = aid.rsplit("-", 1)[-1]
+            store.add_astronaut(aid, f"Inspiration4 {crew} (REAL, OSD-575)", f"I4-{crew}")
+            store.add_observation(r, "osdr-loader")
+            n += 1
+    return n
 
 
 # =============================================================== routes

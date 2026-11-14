@@ -1,0 +1,1436 @@
+{
+ "resourceType": "Bundle",
+ "id": "f4ade2fd-7eff-4a36-b8f2-bd05c111c050",
+ "type": "collection",
+ "timestamp": "2026-11-14T19:12:11Z",
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:adc12b41-7499-4397-ae75-86c55d888cff",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "adc12b41-7499-4397-ae75-86c55d888cff",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C001"
+    },
+    "effectiveDateTime": "2021-09-13T12:00:00Z",
+    "valueQuantity": {
+     "value": 69.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_preflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_preflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:be3e755f-9591-4bb1-922c-d4b7f8a52ea6",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "be3e755f-9591-4bb1-922c-d4b7f8a52ea6",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C001"
+    },
+    "effectiveDateTime": "2021-08-03T12:00:00Z",
+    "valueQuantity": {
+     "value": 80.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_preflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_preflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:e5e72cd9-a454-4185-b297-3f28b163bb07",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "e5e72cd9-a454-4185-b297-3f28b163bb07",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C001"
+    },
+    "effectiveDateTime": "2021-06-16T12:00:00Z",
+    "valueQuantity": {
+     "value": 83.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_preflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_preflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:f180050f-7295-42fc-9b4d-bd19c07fbf5e",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "f180050f-7295-42fc-9b4d-bd19c07fbf5e",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C002"
+    },
+    "effectiveDateTime": "2021-09-13T12:00:00Z",
+    "valueQuantity": {
+     "value": 78.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_preflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_preflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:d23dfcac-c8b4-4e07-a403-2da78e7f50f4",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "d23dfcac-c8b4-4e07-a403-2da78e7f50f4",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C002"
+    },
+    "effectiveDateTime": "2021-08-03T12:00:00Z",
+    "valueQuantity": {
+     "value": 72.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_preflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_preflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:fa1bafc9-33d0-4bad-a71b-c3d1ee19c40b",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "fa1bafc9-33d0-4bad-a71b-c3d1ee19c40b",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C002"
+    },
+    "effectiveDateTime": "2021-06-16T12:00:00Z",
+    "valueQuantity": {
+     "value": 69.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_preflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_preflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:85cb59c7-b712-4dba-ba37-61d315ae402b",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "85cb59c7-b712-4dba-ba37-61d315ae402b",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C003"
+    },
+    "effectiveDateTime": "2021-09-13T12:00:00Z",
+    "valueQuantity": {
+     "value": 75.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_preflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_preflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:84cc4b0b-6139-4e8b-bedb-016a70d6eaa5",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "84cc4b0b-6139-4e8b-bedb-016a70d6eaa5",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C003"
+    },
+    "effectiveDateTime": "2021-08-03T12:00:00Z",
+    "valueQuantity": {
+     "value": 62.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_preflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_preflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:44e366f0-c99a-46bb-be7a-7d74286625c0",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "44e366f0-c99a-46bb-be7a-7d74286625c0",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C003"
+    },
+    "effectiveDateTime": "2021-06-16T12:00:00Z",
+    "valueQuantity": {
+     "value": 77.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_preflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_preflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:2f57c5c6-e884-42f2-82ea-ee5e13a8e32a",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "2f57c5c6-e884-42f2-82ea-ee5e13a8e32a",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C004"
+    },
+    "effectiveDateTime": "2021-09-13T12:00:00Z",
+    "valueQuantity": {
+     "value": 56.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_preflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_preflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:35c87f50-2a8e-4eed-8822-4e0950db4512",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "35c87f50-2a8e-4eed-8822-4e0950db4512",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C004"
+    },
+    "effectiveDateTime": "2021-08-03T12:00:00Z",
+    "valueQuantity": {
+     "value": 83.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_preflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_preflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:8e1122ba-6068-40fd-827d-e41f3af03b8e",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "8e1122ba-6068-40fd-827d-e41f3af03b8e",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C004"
+    },
+    "effectiveDateTime": "2021-06-16T12:00:00Z",
+    "valueQuantity": {
+     "value": 100.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_preflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_preflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:f8e1ac04-1b94-499f-b44b-05b99307cf01",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "f8e1ac04-1b94-499f-b44b-05b99307cf01",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C001"
+    },
+    "effectiveDateTime": "2021-09-19T12:00:00Z",
+    "valueQuantity": {
+     "value": 90.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:6152fec2-a1da-442b-9251-ab9382452f77",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6152fec2-a1da-442b-9251-ab9382452f77",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C001"
+    },
+    "effectiveDateTime": "2022-03-31T12:00:00Z",
+    "valueQuantity": {
+     "value": 87.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:66d52341-108d-40bd-9f34-55ccbf1f329d",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "66d52341-108d-40bd-9f34-55ccbf1f329d",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C001"
+    },
+    "effectiveDateTime": "2021-11-02T12:00:00Z",
+    "valueQuantity": {
+     "value": 84.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:68844cd3-1057-4c56-8548-a33612444957",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "68844cd3-1057-4c56-8548-a33612444957",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C001"
+    },
+    "effectiveDateTime": "2021-12-09T12:00:00Z",
+    "valueQuantity": {
+     "value": 91.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:e3f38b9b-bb11-4db6-af86-a688d70b2c35",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "e3f38b9b-bb11-4db6-af86-a688d70b2c35",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C002"
+    },
+    "effectiveDateTime": "2021-09-19T12:00:00Z",
+    "valueQuantity": {
+     "value": 83.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:a813eb18-801c-4f4d-81a8-f2659e1117cd",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "a813eb18-801c-4f4d-81a8-f2659e1117cd",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C002"
+    },
+    "effectiveDateTime": "2022-03-31T12:00:00Z",
+    "valueQuantity": {
+     "value": 84.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:f61f6d45-56e1-4a7c-b98f-d39f72e67124",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "f61f6d45-56e1-4a7c-b98f-d39f72e67124",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C002"
+    },
+    "effectiveDateTime": "2021-11-02T12:00:00Z",
+    "valueQuantity": {
+     "value": 44.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:2ddd55c5-e729-4bec-b7cc-258cf216e28f",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "2ddd55c5-e729-4bec-b7cc-258cf216e28f",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C002"
+    },
+    "effectiveDateTime": "2021-12-09T12:00:00Z",
+    "valueQuantity": {
+     "value": 77.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:178f1281-443d-4299-b984-44cbb9f072ae",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "178f1281-443d-4299-b984-44cbb9f072ae",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C003"
+    },
+    "effectiveDateTime": "2021-09-19T12:00:00Z",
+    "valueQuantity": {
+     "value": 103.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:68a9dfef-a34b-4c80-80f3-96f4af17a7bb",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "68a9dfef-a34b-4c80-80f3-96f4af17a7bb",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C003"
+    },
+    "effectiveDateTime": "2022-03-31T12:00:00Z",
+    "valueQuantity": {
+     "value": 73.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:7a90f96e-7008-470d-9c53-044229dac0f9",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "7a90f96e-7008-470d-9c53-044229dac0f9",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C003"
+    },
+    "effectiveDateTime": "2021-11-02T12:00:00Z",
+    "valueQuantity": {
+     "value": 36.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:5d8180ca-eea8-4b19-896b-0d8d92830735",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "5d8180ca-eea8-4b19-896b-0d8d92830735",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C003"
+    },
+    "effectiveDateTime": "2021-12-09T12:00:00Z",
+    "valueQuantity": {
+     "value": 80.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:472b69bb-d17d-4082-b37b-3f85833a19f6",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "472b69bb-d17d-4082-b37b-3f85833a19f6",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C004"
+    },
+    "effectiveDateTime": "2021-09-19T12:00:00Z",
+    "valueQuantity": {
+     "value": 97.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:8f7fc64e-cd1c-435d-a471-7c059b325709",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "8f7fc64e-cd1c-435d-a471-7c059b325709",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C004"
+    },
+    "effectiveDateTime": "2022-03-31T12:00:00Z",
+    "valueQuantity": {
+     "value": 84.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:2bbc61bf-61f1-4846-97d5-eeee16a86210",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "2bbc61bf-61f1-4846-97d5-eeee16a86210",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C004"
+    },
+    "effectiveDateTime": "2021-11-02T12:00:00Z",
+    "valueQuantity": {
+     "value": 43.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:37e03a69-3ef2-4643-99d9-95a61491ff38",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "37e03a69-3ef2-4643-99d9-95a61491ff38",
+    "meta": {
+     "tag": [
+      {
+       "system": "https://bovd.local/provenance",
+       "code": "REAL",
+       "display": "OSD-575"
+      }
+     ]
+    },
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Blood glucose"
+      },
+      {
+       "system": "https://bovd.local/indicator",
+       "code": "glucose"
+      }
+     ],
+     "text": "Blood glucose"
+    },
+    "subject": {
+     "reference": "Patient/OSD-575-C004"
+    },
+    "effectiveDateTime": "2021-12-09T12:00:00Z",
+    "valueQuantity": {
+     "value": 80.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    },
+    "extension": [
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/measurement-conditions",
+      "valueString": "{\"citation\": \"Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575\", \"license\": \"NASA open data – Data are courtesy of the NASA Open Science Data Repository\", \"source_file\": \"glucose_earth_postflight.csv\"}"
+     },
+     {
+      "url": "https://bovd.local/fhir/StructureDefinition/gravity-context",
+      "valueCode": "earth_postflight"
+     }
+    ]
+   }
+  }
+ ]
+}

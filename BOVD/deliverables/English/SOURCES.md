@@ -35,6 +35,7 @@ Verify each link opens before submission. No reference has been invented; unknow
 ## Datasets
 | Source | ID | URL | License | Fields | Transformation |
 |---|---|---|---|---|---|
-| NASA OSDR | chosen OSD-n (none bundled) | https://osdr.nasa.gov | NASA open data + study citation | per mapping.json | CSV → FHIR Observation, REAL(OSD-n) |
+| NASA OSDR – SpaceX Inspiration4 serum metabolic panel (bundled) | OSD-575 | https://osdr.nasa.gov/bio/repo/data/studies/OSD-575 | NASA open data – “Data are courtesy of the NASA Open Science Data Repository”; study: Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y | glucose_value_milligram_per_deciliter from LSDS-8_Comprehensive_Metabolic_Panel_CMP_TRANSFORMED.csv; 4 crew × 7 time points = 28 values | scripts/build_osd575.py: day labels L-n / R+n → dates from launch 2021-09-16 and return 2021-09-18 (12:00 UTC, sampling time not in source); L- samples → earth_preflight, R+ samples → earth_postflight; CSV → FHIR Observation (LOINC 2339-0, mg/dL), REAL(OSD-575) |
+| NASA OSDR (any other study) | chosen OSD-n | https://osdr.nasa.gov | NASA open data + study citation | per mapping.json | CSV → FHIR Observation, REAL(OSD-n) |
 | NASA Life Sciences Portal | after data request | https://nlsp.nasa.gov | per agreement | per mapping.json | same |
 | Synthetic generator | 10 scenarios | astra/synthetic.py | project | all indicators | SYNTHETIC(scenario) |

@@ -1,0 +1,14 @@
+{
+ "dataset_id": "OSD-575",
+ "license": "NASA open data – Data are courtesy of the NASA Open Science Data Repository",
+ "citation": "Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y. Dataset: NASA OSDR OSD-575, SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays, https://osdr.nasa.gov/bio/repo/data/studies/OSD-575",
+ "subject_column": "subject",
+ "time_column": "timestamp",
+ "gravity_context": "earth_preflight",
+ "columns": {
+  "glucose_mg_dl": {
+   "indicator": "glucose",
+   "unit": "mg/dL"
+  }
+ }
+}
