@@ -146,7 +146,7 @@
     "topic": "data"
   },
   "clinical_default": {
-    "apa": "قيمة سريرية افتراضية في التطبيق – لا يوجد مصدر من ناسا لهذا الرقم [CITATION NEEDED]. راجع سجل الأدلة E-DEF-01.",
+    "apa": "Default clinical value set in the app – no NASA source for this number [CITATION NEEDED]. See evidence register entry E-DEF-01.",
     "url": "",
     "topic": "defaults"
   }
