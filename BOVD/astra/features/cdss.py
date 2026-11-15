@@ -10,7 +10,8 @@ Safety constraints (ISO 14971 risk R-12 "misuse of CDSS"):
   * all medical logic lives in reviewed JSON rules – no generative model;
   * an action may only reference items in ``approved_onboard_items``
     (validated by :func:`lint_protocols`, run in tests);
-  * the optional local language model (not bundled) may only *rephrase*.
+  * the separate F11 AI assistant (features/assistant.py) can only explain NASA/CSA
+    sources; it never changes these protocols, their answers or the alerts.
 
 Basis: exmc_cdss_2022, exmc_eimo_2024, levin_2023.
 Standards alignment: ISO/IEC 23894 (AI risk – rule-based, transparent),

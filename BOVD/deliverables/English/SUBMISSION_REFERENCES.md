@@ -27,6 +27,7 @@ Copy the block below into the **References** field. It lists every external reso
 - OpenCV, opencv-python-headless (Apache-2.0), MediaPipe (Apache-2.0) and NumPy (BSD-3-Clause) – optional camera posture check.
 - MediaPipe Pose Landmarker "lite" model from Google, downloaded at first start. Model card and licence: https://ai.google.dev/edge/mediapipe/solutions/vision/pose_landmarker
 - pytest (MIT) for tests; python-docx and python-pptx (MIT) to generate the documents and slides.
+- OpenRouter API (https://openrouter.ai) with the free model router `openrouter/free` – used only by the optional F11 AI research assistant, which answers from the bundled NASA/CSA sources.
 
 **Images and media**
 - All screenshots, diagrams, the 3D body figure, icons and the logo were made by the team. No third-party images, music or fonts are used.

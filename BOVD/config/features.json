@@ -52,6 +52,12 @@
       "enabled": true,
       "experimental": false,
       "consent_category": "pose_camera"
+    },
+    "F11_assistant": {
+      "enabled": true,
+      "experimental": true,
+      "consent_category": "ai_assistant",
+      "_note": "Online, opt-in. Sends ONLY the typed question plus excerpts of the bundled NASA/CSA knowledge to OpenRouter – never readings, names or IDs. Off until a key is set."
     }
   },
   "consent_categories": {
@@ -94,6 +100,10 @@
     "pose_camera": {
       "en": "Camera posture check (frames processed in memory, never stored)",
       "ar": "التحقق من الوضعية بالكاميرا (الإطارات تُعالج في الذاكرة ولا تُحفظ)"
+    },
+    "ai_assistant": {
+      "en": "AI research assistant (online): your typed question is sent to OpenRouter – no readings, names or IDs",
+      "ar": "المساعد البحثي بالذكاء الاصطناعي (عبر الإنترنت): يُرسل سؤالك المكتوب فقط إلى OpenRouter – بلا قراءات أو أسماء أو معرّفات"
     }
   },
   "coach": {

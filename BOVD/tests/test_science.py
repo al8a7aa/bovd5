@@ -130,3 +130,24 @@ def test_bundled_real_osdr_data_is_tagged_and_cited() -> None:
 def test_clinical_defaults_not_attributed_to_nasa() -> None:
     for k in ("heart_rate", "spo2", "systolic", "body_temp", "glucose"):
         assert config.thresholds()["indicators"][k]["citation"][0] == "clinical_default"
+
+
+def test_every_indicator_has_bilingual_cited_guidance() -> None:
+    """Objective: guidance on health improvement + why each exam is needed (config/guidance.json)."""
+    guide = config.load("guidance")["indicators"]
+    refs = config.references()
+    assert set(guide) == set(config.thresholds()["indicators"])
+    for k, g in guide.items():
+        assert g["why_en"] and g["why_ar"], k
+        assert g["improve_en"] and len(g["improve_en"]) == len(g["improve_ar"]), k
+        assert g["citation"] and set(g["citation"]) <= set(refs), k
+
+
+def test_why_panel_carries_guidance() -> None:
+    from astra import engine
+
+    a = engine.assess("glucose", 50, [], "iss")
+    w = a["why"]
+    assert "mg/dL" in w["why_check_en"] and w["why_check_ar"]
+    assert any("Low blood glucose protocol" in x for x in w["improve_en"]) and w["improve_ar"]
+    assert a["level"] == "red" and w["protocol"] == "hypoglycemia"

@@ -2,7 +2,8 @@
 
 Hackathon prototype for decision support and training only. NOT a certified medical device. Designed in alignment with the listed standards; not audited or certified. The app never gives a diagnosis: it gives status + explanation + recommended next step + who to contact. All thresholds are configurable and must be reviewed by a flight surgeon. Experimental features are labelled "EXPERIMENTAL – research concept".
 
-- **Local only.** The server binds to 127.0.0.1; no data is sent to any cloud service. Optional OSDR download is the only network call and only on explicit command.
+- **Local only.** The server binds to 127.0.0.1; health data is never sent to any cloud service. Network calls happen only on explicit action: the optional OSDR download, and the optional F11 AI research assistant.
+- **F11 AI research assistant (EXPERIMENTAL, opt-in).** Off until a flight surgeon adds an OpenRouter API key and, for astronauts, until the 'ai_assistant' consent is granted. It sends only the typed question and excerpts of the bundled NASA/CSA sources to OpenRouter (https://openrouter.ai) – never readings, names or astronaut IDs. The key is stored encrypted and never sent to the browser or the black box; the black box records only which sources were used, not the question.
 - **Encryption at rest.** All health payloads are AES-256-GCM encrypted in SQLite; the key is in `data/db/astra.key` (an HSM in a real system).
 - **Consent per category** (voice features, vision, webcam blink, crew interaction, radiation, urine, connection, research export). Withdrawing consent or disabling a feature stops collection – proven by automated consent-off tests.
 - **Minimisation.** Voice: raw audio never stored or sent (7 numbers only). Webcam: blink numbers only, default OFF. Crew: who/minutes only, never content. Nostalgia: only "helped / didn't help".

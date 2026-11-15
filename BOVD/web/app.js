@@ -45,6 +45,14 @@ function cites(list) {
   if (!list || !list.length) return "";
   return `<div class="cite" dir="ltr" style="text-align:left"><b>${t("citations")}:</b><ul>${list.map((c) => `<li>${esc(c.apa)} ${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url)}</a>` : ""}</li>`).join("")}</ul></div>`;
 }
+/** Per-indicator guidance: why this check is needed in space + how to stay healthy / prevent a critical condition. */
+function guidanceBox(w) {
+  const why = S.lang === "ar" ? w.why_check_ar : w.why_check_en;
+  const tips = (S.lang === "ar" ? w.improve_ar : w.improve_en) || [];
+  if (!why && !tips.length) return "";
+  return `<details class="guidance" open><summary><b>${S.lang === "ar" ? "لماذا هذا الفحص في الفضاء؟" : "Why this check matters in space"}</b></summary><p>${esc(why || "")}</p>
+   ${tips.length ? `<b>${S.lang === "ar" ? "حافظ على صحتك وتجنّب الحالات الحرجة" : "Stay healthy and prevent a critical condition"}:</b><ul>${tips.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</details>`;
+}
 function whyBox(a) {
   if (!a || !a.why) return "";
   const w = a.why;
@@ -53,7 +61,8 @@ function whyBox(a) {
    ${S.lang === "ar" && a.notes && a.notes.length ? `<div class="muted">${a.notes.map(esc).join(" · ")}</div>` : ""}
    <div><b>${t("actions")}:</b><ol>${(S.lang === "ar" ? w.actions_ar : w.actions_en).map((x) => `<li>${esc(x)}</li>`).join("")}</ol></div>
    <div><b>${t("contact")}:</b> ${esc(w.contact)} ${w.protocol ? `<button class="small" data-act="openProtocol" data-p="${esc(w.protocol)}">🤖 ${esc(protoTitle(w.protocol))}</button>` : ""}</div>
-   ${cites(w.citations)}<div class="row small"><b>${S.lang === "ar" ? "الأدلة" : "Evidence"}:</b> ${evChips(((S.meta.indicators[a.indicator] || {}).evidence) || [])}</div><div class="cite">${esc(w.disclaimer)}</div></div>`;
+   ${guidanceBox(w)}
+   ${cites((w.citations || []).concat(w.guidance_citations || []))}<div class="row small"><b>${S.lang === "ar" ? "الأدلة" : "Evidence"}:</b> ${evChips(((S.meta.indicators[a.indicator] || {}).evidence) || [])}</div><div class="cite">${esc(w.disclaimer)}</div></div>`;
 }
 const protoTitle = (id) => { const p = (S.meta.protocols || []).find((x) => x.id === id); return p ? L(p, "title") : id; };
 function ring(score, band) {

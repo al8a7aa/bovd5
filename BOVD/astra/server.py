@@ -37,8 +37,8 @@ from urllib.parse import parse_qs, urlparse
 from . import alerts, auth, config, crypto, engine, fhir, physio, service, synthetic, validation
 from .pose import session as pose
 from .config import DATA_DIR, DB_DIR, WEB_DIR
-from .consent import ConsentError, is_enabled
-from .features import blackbox, cdss, coach, connection, crew, radiation, urine, vision, voice
+from .consent import ConsentError, is_enabled, require
+from .features import assistant, blackbox, cdss, coach, connection, crew, radiation, urine, vision, voice
 from .storage import Store
 
 VERSION = "0.9.0-hackathon"
@@ -481,6 +481,41 @@ def r_cdss_start(c: Ctx) -> Any:
 @route("POST", "/api/cdss/answer")
 def r_cdss_answer(c: Ctx) -> Any:
     return cdss.answer(c.store, str(c.b("session")), str(c.b("answer")), c.user)
+
+
+# -------- F11 NASA-grounded AI assistant (EXPERIMENTAL, online, opt-in)
+@route("GET", "/api/assistant/status")
+def r_ai_status(c: Ctx) -> Any:
+    """Is the AI assistant set up? Never returns the key itself."""
+    return {**assistant.status(c.store), "enabled": is_enabled(c.store, "F11_assistant")}
+
+
+@route("POST", "/api/assistant/key", "thresholds_edit")
+def r_ai_key(c: Ctx) -> Any:
+    """Set or remove the OpenRouter API key (stored encrypted) and optionally the model id."""
+    try:
+        assistant.set_key(c.store, c.b("key") or None, c.user)
+    except assistant.AssistantError as e:
+        raise ApiError(400, str(e)) from e
+    m = str(c.b("model") or "").strip()
+    if m:
+        if not re.fullmatch(r"[A-Za-z0-9_./:\-]{3,100}", m):
+            raise ApiError(400, "invalid model id")
+        c.store.set_setting(assistant.MODEL_SETTING, m, c.user)
+    return assistant.status(c.store)
+
+
+@route("POST", "/api/assistant/ask")
+def r_ai_ask(c: Ctx) -> Any:
+    """Ask the NASA-grounded assistant. Sends only the question and NASA/CSA excerpts to OpenRouter."""
+    if not is_enabled(c.store, "F11_assistant"):
+        raise ConsentError("F11_assistant is disabled")
+    if c.role == "astronaut":
+        require(c.store, "F11_assistant", c.aid())
+    try:
+        return assistant.ask(c.store, str(c.b("question") or ""), "ar" if c.b("lang") == "ar" else "en")
+    except assistant.AssistantError as e:
+        raise ApiError(400, str(e)) from e
 
 
 # -------- F5 Radiation

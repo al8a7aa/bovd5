@@ -266,7 +266,13 @@ def explain(a: dict[str, Any], hazard_key: str | None = None, citations: list[st
     parts_en += a.get("notes", [])
     cites = citations or config.thresholds()["indicators"].get(a["indicator"], {}).get("citation", [])
     act = ACTIONS[lvl]
+    # Per-indicator guidance (config/guidance.json): why the check is needed in space and how to stay healthy.
+    g = config.load("guidance")["indicators"].get(a["indicator"], {})
+    g_cites = [k for k in g.get("citation", []) if k not in cites]
     return {
+        "why_check_en": g.get("why_en", ""), "why_check_ar": g.get("why_ar", ""),
+        "improve_en": g.get("improve_en", []), "improve_ar": g.get("improve_ar", []),
+        "guidance_citations": config.cite(g_cites),
         "hazard": {"key": hz_key, **hz},
         "explanation_en": " ".join(parts_en), "explanation_ar": " ".join(parts_ar),
         "actions_en": act["en"], "actions_ar": act["ar"], "contact": act["contact"],

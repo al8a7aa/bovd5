@@ -31,7 +31,7 @@ VIEWS.cdss = async () => {
   let step = "";
   if (s) {
     const n = s.node; const txt = S.lang === "ar" ? n.ar : n.en;
-    step = `<div class="card" style="border:2px solid ${n.type === "stop" ? "var(--red)" : "var(--cyan)"};margin-top:12px"><h3>${esc(L(s, "title"))} · ${s.session.path.length + 1}</h3>
+    step = `<div class="card cdssStep" style="border:2px solid ${n.type === "stop" ? "var(--red)" : "var(--cyan)"};margin-top:12px"><h3>${esc(L(s, "title"))} · ${s.session.path.length + 1}</h3>
       <p style="font-size:1.25em">${n.type === "stop" ? "⛔ " : n.type === "end" ? "✔ " : n.type === "action" ? "👉 " : "❓ "}${esc(txt)}</p>
       ${(n.items || []).length ? `<p class="muted">Onboard items: ${n.items.map(esc).join(", ")}</p>` : ""}
       ${n.type === "question" ? `<div class="row"><button class="primary" data-act="cdssAns" data-a="yes" style="min-width:140px">${t("yes")}</button><button data-act="cdssAns" data-a="no" style="min-width:140px">${t("no")}</button></div>` : ""}
@@ -39,11 +39,70 @@ VIEWS.cdss = async () => {
       ${s.session.queued_to_ground ? `<p>📡 ${S.lang === "ar" ? "أُرسلت الجلسة للجراح الجوي – الوصول المتوقع" : "Session queued to flight surgeon – ETA"} ${esc(s.session.queued_to_ground.eta)} (${fmtDelay(s.session.queued_to_ground.delay_s)})</p>` : ""}
       ${n.type === "stop" ? `<button class="danger" data-act="go" data-v="alerts">📣 CMO</button>` : ""}${cites(s.citations)}</div>`;
   }
-  return head + `<div class="grid" style="margin-top:12px">${ps.protocols.map((p) => `<button data-act="cdssStart" data-p="${esc(p.id)}" style="min-height:80px">${esc(L(p, "title"))}</button>`).join("")}</div>
-    ${ps.lint.length ? `<div class="card">⚠ ${ps.lint.map(esc).join("<br>")}</div>` : `<p class="muted">✔ protocol lint: all items on the approved onboard list; every protocol has a stop criterion.</p>`}${step}`;
+  return head + doctorHero() + `<div class="grid" style="margin-top:12px">${ps.protocols.map((p) => `<button data-act="cdssStart" data-p="${esc(p.id)}" style="min-height:80px">${esc(L(p, "title"))}</button>`).join("")}</div>
+    ${ps.lint.length ? `<div class="card">⚠ ${ps.lint.map(esc).join("<br>")}</div>` : `<p class="muted">✔ protocol lint: all items on the approved onboard list; every protocol has a stop criterion.</p>`}${step}` + await assistantCard();
 };
 ACTIONS.cdssStart = async (el) => { S.cdss = await post("/api/cdss/start", { aid: S.aid, protocol: el.dataset.p }); go("cdss"); };
 ACTIONS.cdssAns = async (el) => { S.cdss = await post("/api/cdss/answer", { session: S.cdss.session.id, answer: el.dataset.a }); go("cdss"); };
+
+/** Animated Smart Doctor header: heartbeat line that draws itself, pulsing heart and a scanning ring (decorative). */
+function doctorHero() {
+  const AR = S.lang === "ar";
+  return `<div class="docHero" aria-hidden="true">
+    <svg class="docEcg" viewBox="0 0 600 110" preserveAspectRatio="none"><path pathLength="1" d="M0 60H170L186 46L200 80L226 14L252 104L276 40L292 60H380L392 52L402 66L412 60H600"/></svg>
+    <div class="docBadge"><svg viewBox="-50 -50 100 100" width="92" height="92"><circle class="ring" r="44"/><circle class="ring2" r="34"/>
+      <path class="heart" d="M0 18C-24 2 -26 -16 -14 -22C-6 -26 0 -18 0 -14C0 -18 6 -26 14 -22C26 -16 24 2 0 18Z"/></svg></div>
+    <div class="docTag">${AR ? "الطبيب الذكي يعمل دون اتصال · بروتوكولات مراجَعة" : "Works offline · reviewed protocols · one question per screen"}</div></div>`;
+}
+
+// ============ F11 NASA-grounded AI assistant (EXPERIMENTAL, online, opt-in)
+async function assistantCard() {
+  const AR = S.lang === "ar";
+  let st; try { st = await get("/api/assistant/status"); } catch (e) { return ""; }
+  if (!st.enabled) return "";
+  let consent = null;
+  if (S.aid && S.user.role === "astronaut") { try { consent = (await get(withAid("/api/consent"))).consents.ai_assistant; } catch (e) { /* */ } }
+  if (consent === undefined) consent = false;
+  const samples = AR ? ["لماذا أشعر بالدوار بعد الهبوط؟", "كم من الإشعاع يعتبر كثيرًا؟", "سكري منخفض قبل السير في الفضاء", "لا أستطيع النوم جيدًا"]
+    : ["Why do I feel dizzy after landing?", "How much radiation is too much?", "My blood sugar is low before a spacewalk", "I can't sleep well in space"];
+  const setup = S.user.role === "flight_surgeon" ? `<details class="small" style="margin-top:10px"><summary>⚙ ${AR ? "إعداد مفتاح OpenRouter" : "OpenRouter key setup"}</summary>
+      <p class="muted">${AR ? "يُحفظ المفتاح مشفّرًا على هذا الجهاز ولا يُرسل إلى المتصفح." : "The key is stored encrypted on this machine and never sent to the browser."} ${st.from_env ? (AR ? "(المفتاح مأخوذ من متغير البيئة OPENROUTER_API_KEY)" : "(key comes from the OPENROUTER_API_KEY environment variable)") : ""}</p>
+      <div class="row"><input id="aiKey" type="password" autocomplete="off" placeholder="sk-or-v1-…" style="flex:2;min-width:220px">
+      <input id="aiModel" placeholder="${esc(st.model)}" style="flex:1;min-width:160px"></div>
+      <div class="row"><button class="primary small" data-act="aiKey">${AR ? "حفظ" : "Save"}</button>${st.configured && !st.from_env ? `<button class="small danger" data-act="aiKey" data-clear="1">${AR ? "حذف المفتاح" : "Remove key"}</button>` : ""}</div></details>` : "";
+  const ready = st.configured && consent !== false;
+  return `<div class="card aiCard" style="margin-top:16px">
+    <h3><span class="aiOrb" aria-hidden="true"><i></i><i></i><i></i></span> ${AR ? "المساعد البحثي المبني على مصادر ناسا" : "NASA-grounded research assistant"} ${expBadge()}</h3>
+    <p class="muted">${AR ? `يجيب فقط من مصادر ناسا ووكالة الفضاء الكندية المضمّنة في التطبيق (${st.documents} مقتطفًا)، مع ذكر المصدر. لا يشخّص ولا يغيّر البروتوكولات. يحتاج إلى الإنترنت ويرسل نص سؤالك فقط إلى ${esc(st.provider)} – لا تكتب أسماء أو قراءات.`
+      : `Answers only from the NASA and CSA sources bundled in the app (${st.documents} excerpts) and cites them. It never diagnoses or changes the protocols. Needs internet and sends only your typed question to ${esc(st.provider)} – do not type names or readings.`}
+      <span class="badge">${esc(st.model)}</span></p>
+    ${!st.configured ? `<div class="why yellow small">${AR ? "لم يُضبط بعد: يجب على الجراح الجوي إضافة مفتاح OpenRouter." : "Not set up yet: a flight surgeon must add an OpenRouter API key."}</div>` : ""}
+    ${consent === false ? `<div class="why yellow small">${AR ? "يتطلب موافقتك على فئة «المساعد البحثي بالذكاء الاصطناعي»." : "Needs your consent for the AI research assistant."} <button class="small primary" data-act="consent" data-c="ai_assistant" data-g="1">${t("grant")}</button></div>` : ""}
+    <div class="row" style="margin-top:8px">${samples.map((q) => `<button class="small chip" data-act="aiSample" ${ready ? "" : "disabled"}>${esc(q)}</button>`).join("")}</div>
+    <div class="row"><textarea id="aiQ" rows="2" maxlength="500" style="flex:1;min-width:240px" ${ready ? "" : "disabled"} placeholder="${AR ? "اكتب سؤالك…" : "Type your question…"}"></textarea>
+      <button class="primary" data-act="aiAsk" ${ready ? "" : "disabled"}>${AR ? "اسأل" : "Ask"}</button></div>
+    <div id="aiOut" aria-live="polite"></div>${setup}</div>`;
+}
+const aiThinking = () => `<div class="aiThink"><span class="dot"></span><span class="dot"></span><span class="dot"></span> ${S.lang === "ar" ? "يبحث في مصادر ناسا…" : "Searching the NASA sources…"}</div>`;
+function aiAnswerHtml(r) {
+  const body = esc(r.answer).replace(/\[S(\d+)\]/g, (m, n) => `<a href="#ai-src-${n}" class="srcRef">[S${n}]</a>`).replace(/\n/g, "<br>");
+  return `<div class="why aiAns"><div>${body}</div>
+    ${r.sources.length ? `<details style="margin-top:8px"><summary><b>${S.lang === "ar" ? "المصادر" : "Sources"} (${r.sources.length})</b></summary><ol class="small">${r.sources.map((s) => `<li id="ai-src-${s.n}">${esc(s.title)}${s.url ? ` <a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.url)}</a>` : ""}${(s.citations || []).filter((c) => c.url).map((c) => ` · <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.key)}</a>`).join("")}</li>`).join("")}</ol></details>` : ""}
+    ${r.model ? `<div class="cite">${esc(r.disclaimer || "")} · ${esc(r.model)}</div>` : ""}</div>`;
+}
+ACTIONS.aiSample = (el) => { const q = $("#aiQ"); if (q) { q.value = el.textContent; ACTIONS.aiAsk(); } };
+ACTIONS.aiAsk = async () => {
+  const q = ($("#aiQ") || {}).value || ""; const out = $("#aiOut"); if (!out) return;
+  if (q.trim().length < 3) { toast(S.lang === "ar" ? "اكتب سؤالًا" : "Type a question"); return; }
+  out.innerHTML = aiThinking();
+  try { out.innerHTML = aiAnswerHtml(await post("/api/assistant/ask", { question: q, lang: S.lang })); }
+  catch (e) { out.innerHTML = `<div class="why red small">⚠ ${esc(e.message)}</div>`; }
+};
+ACTIONS.aiKey = async (el) => {
+  const body = el.dataset.clear ? { key: null } : { key: ($("#aiKey") || {}).value || null, model: ($("#aiModel") || {}).value || "" };
+  if (!el.dataset.clear && !body.key && !body.model) { toast(S.lang === "ar" ? "أدخل المفتاح" : "Enter the key"); return; }
+  try { await post("/api/assistant/key", body); toast(S.lang === "ar" ? "تم الحفظ" : "Saved"); go("cdss"); } catch (e) { toast("⚠ " + e.message, 4000); }
+};
 
 // ============ F5 Radiation
 VIEWS.radiation = async () => {

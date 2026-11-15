@@ -1,0 +1,124 @@
+{
+  "_note": "Per-indicator guidance shown in every WHY panel: why the check is needed in space, and what the astronaut can do to stay healthy or prevent a critical condition. General prevention advice only – never a diagnosis or a prescription. Treatment steps live in the Smart Doctor protocols (config/cdss_protocols.json). Citation keys resolve through config/references.json; 'clinical_default' marks general advice without a NASA source. Must be reviewed by a flight surgeon.",
+  "indicators": {
+    "heart_rate": {
+      "why_en": "In 0 g about 2 L of body fluid moves toward the head and the heart works less against gravity, so your resting heart rate changes. A resting rate well above or below your own baseline can be an early sign of dehydration, illness, stress or over-training.",
+      "why_ar": "في انعدام الجاذبية تنتقل نحو 2 لتر من سوائل الجسم نحو الرأس ويعمل القلب بجهد أقل ضد الجاذبية، فيتغير نبضك أثناء الراحة. النبض المرتفع أو المنخفض كثيرًا عن خط أساسك قد يكون علامة مبكرة على الجفاف أو المرض أو التوتر أو الإجهاد.",
+      "improve_en": ["Drink your planned fluids through the day.", "Complete your daily exercise prescription (ARED, treadmill, cycle).", "Measure at rest, restrained, at the same time each day, and not right after exercise or caffeine."],
+      "improve_ar": ["اشرب كمية السوائل المخطط لها خلال اليوم.", "أكمل وصفة التمرين اليومية (جهاز المقاومة، جهاز المشي، الدراجة).", "قِس وأنت مرتاح ومثبَّت وفي نفس الوقت يوميًا، وليس بعد التمرين أو الكافيين مباشرة."],
+      "citation": ["nasa_cv_risk", "hrp_risks_2026", "scott_2023"]
+    },
+    "systolic": {
+      "why_en": "Blood pressure shows how your heart and blood vessels adapt to the fluid shift. After a landing on the Moon, Mars or Earth, low blood pressure on standing can cause dizziness or fainting (orthostatic intolerance), which is dangerous during egress.",
+      "why_ar": "ضغط الدم يبيّن كيف يتكيف القلب والأوعية مع انتقال السوائل. بعد الهبوط على القمر أو المريخ أو الأرض قد يسبب انخفاض الضغط عند الوقوف دوارًا أو إغماءً (عدم تحمّل الانتصاب)، وهذا خطير أثناء الخروج من المركبة.",
+      "improve_en": ["Before a gravity transition, follow the fluid-loading plan (fluids and salt tablets as prescribed).", "Wear compression garments for landing and the first days after it.", "Stand up slowly after landing, with a crewmate nearby; sit down at once if dizzy."],
+      "improve_ar": ["قبل انتقال الجاذبية اتبع خطة تحميل السوائل (السوائل وأقراص الملح حسب الوصفة).", "ارتدِ ملابس الضغط عند الهبوط وفي الأيام الأولى بعده.", "قف ببطء بعد الهبوط وبجانبك زميل؛ واجلس فورًا إن شعرت بدوار."],
+      "citation": ["hrp_oi_2015", "nasa_cv_risk"]
+    },
+    "diastolic": {
+      "why_en": "The lower blood-pressure number is read together with the upper one to see how your blood vessels adapt to weightlessness and to the return to gravity.",
+      "why_ar": "الرقم الأدنى لضغط الدم يُقرأ مع الرقم الأعلى لمعرفة كيف تتكيف أوعيتك الدموية مع انعدام الوزن ومع العودة إلى الجاذبية.",
+      "improve_en": ["Keep to your fluid plan and exercise prescription.", "Measure on the same arm, at heart level, after 5 minutes of rest."],
+      "improve_ar": ["التزم بخطة السوائل ووصفة التمرين.", "قِس على نفس الذراع وبمستوى القلب بعد 5 دقائق من الراحة."],
+      "citation": ["nasa_cv_risk", "hrp_oi_2015"]
+    },
+    "spo2": {
+      "why_en": "Oxygen saturation shows how much oxygen reaches your blood. It can drop if the cabin pressure or oxygen level changes, during illness, or after a suit or airlock problem. Low oxygen (hypoxia) quickly affects judgement.",
+      "why_ar": "تشبع الأكسجين يبيّن مقدار الأكسجين الواصل إلى دمك. قد ينخفض إذا تغيّر ضغط المقصورة أو مستوى الأكسجين، أو أثناء المرض، أو بعد مشكلة في البدلة أو غرفة معادلة الضغط. نقص الأكسجين يؤثر بسرعة على التفكير.",
+      "improve_en": ["If the value is low, check the cabin oxygen and pressure readings with the crew.", "Warm your hands, keep still and measure again.", "Report any drop together with shortness of breath to the Crew Medical Officer at once."],
+      "improve_ar": ["إن كانت القيمة منخفضة فتحقق مع الطاقم من قراءات أكسجين المقصورة وضغطها.", "دفّئ يديك وابقَ ساكنًا ثم أعد القياس.", "أبلغ الضابط الطبي فورًا عن أي انخفاض مصحوب بضيق نفس."],
+      "citation": ["hrp_risks_2026", "nasa_std_3001_v2", "clinical_default"]
+    },
+    "body_temp": {
+      "why_en": "Spaceflight changes the immune system, so infections can appear or reactivate. A fever is an early, easy-to-measure sign that something needs attention.",
+      "why_ar": "الرحلات الفضائية تغيّر جهاز المناعة، فقد تظهر عدوى أو تنشط من جديد. الحمى علامة مبكرة وسهلة القياس على أن شيئًا ما يحتاج إلى انتباه.",
+      "improve_en": ["Wait 30 minutes after exercise before measuring.", "Rest, drink fluids and keep up hand hygiene.", "If you have a fever, open the Fever protocol in Smart Doctor and tell the Crew Medical Officer."],
+      "improve_ar": ["انتظر 30 دقيقة بعد التمرين قبل القياس.", "استرح واشرب السوائل وحافظ على نظافة اليدين.", "إن كانت لديك حمى فافتح بروتوكول الحمى في الطبيب الذكي وأبلغ الضابط الطبي."],
+      "citation": ["hrp_risks_2026", "clinical_default"]
+    },
+    "glucose": {
+      "why_en": "Blood sugar (mg/dL) shows your energy balance. Eating less than planned, less physical activity and stress in flight can change it. Low blood sugar affects thinking and safety, especially before a spacewalk.",
+      "why_ar": "سكر الدم (ملغ/دل) يبيّن توازن الطاقة لديك. تناول طعام أقل من المخطط، وقلة الحركة، والتوتر أثناء الرحلة قد تغيّره. انخفاض السكر يؤثر على التفكير والسلامة، خاصة قبل السير في الفضاء.",
+      "improve_en": ["Eat your planned meals and snacks on schedule.", "Eat before a spacewalk or other long task.", "If your value is low, open the Low blood glucose protocol in Smart Doctor and take fast sugar as it says."],
+      "improve_ar": ["تناول الوجبات والوجبات الخفيفة المخطط لها في موعدها.", "تناول الطعام قبل السير في الفضاء أو أي مهمة طويلة.", "إن كانت القيمة منخفضة فافتح بروتوكول انخفاض سكر الدم في الطبيب الذكي وتناول السكر السريع كما يذكر."],
+      "citation": ["hrp_risks_2026", "clinical_default"]
+    },
+    "sleep_hours": {
+      "why_en": "Astronauts sleep about 6 hours a night in flight, less than on Earth. Short sleep for several nights lowers alertness, mood and performance and raises the risk of mistakes.",
+      "why_ar": "ينام رواد الفضاء نحو 6 ساعات ليلًا أثناء الرحلة، أقل مما على الأرض. قلة النوم لعدة ليالٍ تُضعف اليقظة والمزاج والأداء وتزيد خطر الأخطاء.",
+      "improve_en": ["Keep to the crew sleep schedule, not the sunrises (about 16 a day on the ISS).", "Use the eye mask and earplugs and dim the lights in your crew quarters.", "Avoid screens and hard work in the hour before sleep."],
+      "improve_ar": ["التزم بجدول نوم الطاقم وليس بالشروق (نحو 16 شروقًا يوميًا في المحطة).", "استخدم قناع العين وسدادات الأذن وخفّف الإضاءة في غرفة نومك.", "تجنب الشاشات والعمل المجهد في الساعة التي تسبق النوم."],
+      "citation": ["barger_2014", "ochmo_sleep_2023", "hrp_risks_2026"]
+    },
+    "sleep_quality": {
+      "why_en": "How rested you feel matters as much as hours slept. Noise, light, CO₂ build-up and stress all reduce sleep quality in a spacecraft.",
+      "why_ar": "شعورك بالراحة مهم بقدر عدد ساعات النوم. الضجيج والضوء وتراكم ثاني أكسيد الكربون والتوتر كلها تقلل جودة النوم في المركبة.",
+      "improve_en": ["Make sure the fan in your sleeping area is on.", "Note light or noise that woke you and tell the crew.", "Use sleep aids only as the medical plan allows."],
+      "improve_ar": ["تأكد أن المروحة في مكان نومك تعمل.", "سجّل الضوء أو الضجيج الذي أيقظك وأخبر الطاقم.", "استخدم مساعدات النوم فقط كما تسمح الخطة الطبية."],
+      "citation": ["barger_2014", "ochmo_sleep_2023"]
+    },
+    "mood": {
+      "why_en": "Isolation, confinement and distance from home can slowly lower mood. Spotting a decline early lets the crew and the behavioural health team help before it affects health or teamwork.",
+      "why_ar": "العزلة والحبس والبعد عن الوطن قد تخفض المزاج تدريجيًا. اكتشاف التراجع مبكرًا يتيح للطاقم وفريق الصحة السلوكية المساعدة قبل أن يؤثر على الصحة أو العمل الجماعي.",
+      "improve_en": ["Keep regular private calls and messages with family and friends.", "Keep your exercise and free-time routine.", "Talk to a crewmate or the behavioural health specialist if low mood lasts several days."],
+      "improve_ar": ["حافظ على مكالمات ورسائل خاصة منتظمة مع العائلة والأصدقاء.", "حافظ على روتين التمرين ووقت الفراغ.", "تحدث مع زميل أو مع أخصائي الصحة السلوكية إذا استمر انخفاض المزاج عدة أيام."],
+      "citation": ["hrp_bmed_2015", "picano_2024", "hrp_risks_2026"]
+    },
+    "stress": {
+      "why_en": "Long work days, high-risk tasks and living in a small space raise stress. High stress for a long time affects sleep, mood, immunity and decisions.",
+      "why_ar": "أيام العمل الطويلة والمهام الخطرة والعيش في مكان ضيق ترفع التوتر. التوتر العالي لفترة طويلة يؤثر على النوم والمزاج والمناعة واتخاذ القرار.",
+      "improve_en": ["Take short breaks between tasks.", "Use a breathing or relaxation exercise.", "Tell the crew or ground team when the plan is too full."],
+      "improve_ar": ["خذ فترات راحة قصيرة بين المهام.", "مارس تمرين تنفس أو استرخاء.", "أخبر الطاقم أو الفريق الأرضي عندما تكون الخطة مزدحمة جدًا."],
+      "citation": ["hrp_bmed_2015", "picano_2024"]
+    },
+    "workload": {
+      "why_en": "Too much work for too long leads to fatigue and mistakes, which are dangerous in space.",
+      "why_ar": "العمل الكثير لفترة طويلة يؤدي إلى التعب والأخطاء، وهذا خطير في الفضاء.",
+      "improve_en": ["Rank today's tasks and agree on the order with the crew.", "Ask the ground team to move tasks when the workload stays high."],
+      "improve_ar": ["رتّب مهام اليوم واتفق على ترتيبها مع الطاقم.", "اطلب من الفريق الأرضي نقل بعض المهام عندما يبقى ضغط العمل مرتفعًا."],
+      "citation": ["hrp_bmed_2015", "hrp_team_2022"]
+    },
+    "radiation_pct": {
+      "why_en": "Space radiation adds up over the mission and raises the lifetime risk of cancer. The app tracks your dose against the NASA career limit (600 mSv) so the crew can reduce exposure in time.",
+      "why_ar": "الإشعاع الفضائي يتراكم خلال المهمة ويرفع خطر الإصابة بالسرطان على مدى الحياة. يتابع التطبيق جرعتك مقابل حد ناسا المهني (600 ملي سيفرت) ليتمكن الطاقم من تقليل التعرض في الوقت المناسب.",
+      "improve_en": ["Wear your dosimeter at all times.", "During a solar storm alert, go to the shelter zone at once.", "Spend sleep and rest time in the best-shielded area of the habitat."],
+      "improve_ar": ["ارتدِ مقياس الجرعة في كل الأوقات.", "عند إنذار العاصفة الشمسية اذهب فورًا إلى منطقة الملجأ.", "اقضِ وقت النوم والراحة في أفضل منطقة محمية في المسكن."],
+      "citation": ["nasa_std_3001_v1", "george_2024", "csa_radiation_2026"]
+    },
+    "cabin_co2": {
+      "why_en": "Carbon dioxide builds up in a closed cabin and in still air pockets. Even moderate levels can cause headaches and poor concentration.",
+      "why_ar": "يتراكم ثاني أكسيد الكربون في المقصورة المغلقة وفي جيوب الهواء الراكد. حتى المستويات المتوسطة قد تسبب الصداع وضعف التركيز.",
+      "improve_en": ["Keep fans and airflow on, especially where you sleep.", "Move to a well-ventilated module if you have a headache.", "Report headaches and check the CO₂ scrubber status with the crew."],
+      "improve_ar": ["أبقِ المراوح وتدفق الهواء تعمل، خاصة في مكان نومك.", "انتقل إلى وحدة جيدة التهوية إذا شعرت بصداع.", "أبلغ عن الصداع وتحقق مع الطاقم من حالة جهاز إزالة ثاني أكسيد الكربون."],
+      "citation": ["nasa_std_3001_v2"]
+    },
+    "body_mass": {
+      "why_en": "Astronauts often eat less than they need in flight. Losing body mass means losing muscle and energy, which weakens you for tasks and for the return to gravity.",
+      "why_ar": "كثيرًا ما يأكل رواد الفضاء أقل من حاجتهم أثناء الرحلة. فقدان كتلة الجسم يعني فقدان العضلات والطاقة، مما يضعفك في المهام وعند العودة إلى الجاذبية.",
+      "improve_en": ["Eat all your planned meals and log what you eat.", "Keep your resistance-exercise prescription to protect muscle.", "Measure with the station's mass-measurement device, before breakfast, in the same clothes."],
+      "improve_ar": ["تناول كل الوجبات المخطط لها وسجّل ما تأكله.", "التزم بوصفة تمارين المقاومة لحماية العضلات.", "قِس بجهاز قياس الكتلة في المحطة قبل الإفطار وبنفس الملابس."],
+      "citation": ["hrp_risks_2026", "scott_2023"]
+    },
+    "exercise_min": {
+      "why_en": "Without gravity, muscles, bones and the heart weaken quickly. Daily exercise is the main countermeasure that keeps you fit for work in space and for the return to gravity.",
+      "why_ar": "بدون جاذبية تضعف العضلات والعظام والقلب بسرعة. التمرين اليومي هو الإجراء الوقائي الرئيسي الذي يبقيك لائقًا للعمل في الفضاء وللعودة إلى الجاذبية.",
+      "improve_en": ["Complete your full daily exercise prescription.", "Include resistance exercise (ARED) and aerobic exercise (treadmill or cycle).", "If you miss a session, plan it in with the crew rather than skipping it."],
+      "improve_ar": ["أكمل وصفة التمرين اليومية كاملة.", "اجمع بين تمارين المقاومة (جهاز المقاومة) والتمارين الهوائية (جهاز المشي أو الدراجة).", "إن فاتتك حصة فخطط لتعويضها مع الطاقم بدل تركها."],
+      "citation": ["scott_2023", "english_2020"]
+    },
+    "urine_sg": {
+      "why_en": "Urine specific gravity shows how well you are hydrated. Concentrated urine means you need more fluid and raises the risk of kidney stones.",
+      "why_ar": "الكثافة النوعية للبول تبيّن مستوى ترطيب جسمك. البول المركّز يعني أنك تحتاج سوائل أكثر ويرفع خطر حصى الكلى.",
+      "improve_en": ["Drink to your daily fluid target.", "Drink extra after exercise and on hot or busy days."],
+      "improve_ar": ["اشرب حتى تصل إلى هدف السوائل اليومي.", "اشرب أكثر بعد التمرين وفي الأيام الحارة أو المزدحمة."],
+      "citation": ["smith_2012", "clinical_default"]
+    },
+    "urine_calcium": {
+      "why_en": "In weightlessness bones lose calcium, which leaves the body in the urine. High urine calcium is a sign of bone loss and raises the risk of kidney stones.",
+      "why_ar": "في انعدام الوزن تفقد العظام الكالسيوم الذي يخرج مع البول. ارتفاع كالسيوم البول علامة على فقدان العظام ويرفع خطر حصى الكلى.",
+      "improve_en": ["Keep your resistance-exercise prescription: it loads the bones.", "Drink to your fluid target.", "Follow the menu plan, which limits salt, and take vitamin D as prescribed."],
+      "improve_ar": ["التزم بوصفة تمارين المقاومة لأنها تحمّل العظام.", "اشرب حتى تصل إلى هدف السوائل.", "اتبع خطة الطعام التي تحدّ من الملح، وتناول فيتامين د حسب الوصفة."],
+      "citation": ["smith_2012", "smith_1999"]
+    }
+  }
+}

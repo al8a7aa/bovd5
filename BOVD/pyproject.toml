@@ -3,6 +3,7 @@ name = "bovd"
 version = "0.9.0"
 description = "BÖVD – astronaut health decision-support prototype (NASA Space Apps 2026). Not a medical device."
 requires-python = ">=3.10"
+keywords = ["nasa-space-apps-2026", "astronaut-health", "ai-assisted"]  # AI use: see README "Use of AI tools"
 dependencies = []            # standard library only
 [project.optional-dependencies]
 fast-crypto = ["cryptography>=41"]

@@ -6,9 +6,11 @@ The long deck (BOVD_Presentation.pptx) stays as the full walkthrough. This one i
 
 Run: python scripts/build_demo_deck.py
 Output: deliverables/English/BOVD_Demo_7_slides.pptx
+After building, export it to BOVD_Demo_7_slides.pdf (PowerPoint: File → Save As → PDF) so the GitHub link opens in a browser.
 """
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 from pptx import Presentation
@@ -21,6 +23,8 @@ ROOT = Path(__file__).resolve().parent.parent
 IMG = ROOT / "deliverables" / "img" / "v2"
 OUT = ROOT / "deliverables" / "English" / "BOVD_Demo_7_slides.pptx"
 MAX_SLIDES = 7
+TEAM = json.loads((ROOT / "config" / "team.json").read_text(encoding="utf-8"))
+PLACEHOLDERS = "[" in TEAM["team_name"] or any("[" in m for m in TEAM["members"])
 
 NAVY, CYAN, WHITE = RGBColor(0x0B, 0x1F, 0x3A), RGBColor(0x00, 0xB4, 0xD8), RGBColor(0xFF, 0xFF, 0xFF)
 GREEN, AMBER, RED, MUTED = RGBColor(0x2E, 0xCC, 0x71), RGBColor(0xF5, 0xA6, 0x23), RGBColor(0xFF, 0x4D, 0x4F), RGBColor(0x9D, 0xB3, 0xCC)
@@ -81,9 +85,10 @@ def slide(title, notes, n):
 
 # 1 ─ title and pitch
 s = slide("", "One sentence: BÖVD tells an astronaut their health status, why, what to do next and who to contact, with no Earth link needed.", 1)
-tb(s, 0.8, 1.3, 11.5, 1.2, "BÖVD", 60, WHITE, True)
-tb(s, 0.8, 2.6, 11.7, 1.0, "Explainable, offline health monitoring for astronauts – on the ISS, the Moon, in Mars transit and on Mars", 24, CYAN)
-tb(s, 0.8, 3.9, 11.7, 2.0, [
+tb(s, 0.8, 0.9, 11.5, 1.2, "BÖVD", 60, WHITE, True)
+tb(s, 0.8, 2.15, 11.7, 1.0, "Explainable, offline health monitoring for astronauts – on the ISS, the Moon, in Mars transit and on Mars", 24, CYAN)
+tb(s, 0.8, 3.3, 11.7, 0.9, [f"Team: {TEAM['team_name']}", "Members: " + ", ".join(TEAM["members"])], 17, AMBER, True)
+tb(s, 0.8, 4.35, 11.7, 2.0, [
     "Challenge: Create Health Monitoring Software for Astronauts on Space Missions",
     "Every reading gets four answers: status · why · next step · who to contact",
     "Uses real NASA data (OSDR OSD-575, Inspiration4) and NASA health standards",
@@ -177,8 +182,18 @@ for i, (t_, b_) in enumerate([("Artemis Moon base", "1.3 s delay, 1/6 g, solar s
     card(s, 0.5 + i * 3.1, 1.4, 2.95, 2.0, t_, b_, size=14)
 tb(s, 0.5, 3.7, 12.3, 2.0, [
     "Next: flight-surgeon review of every threshold · more OSDR and NASA Life Sciences Portal data · neutron dose input like CSA's CANS spectrometer · usability tests with gloves in an analog mission"], 16)
-tb(s, 0.5, 5.3, 12.3, 1.2, ["Try it: double-click start.bat → http://127.0.0.1:8765 · demo users astro1 / cmo1 / surgeon1 · password astra2026"], 16, CYAN, True)
+tb(s, 0.5, 4.9, 12.3, 0.8, ["Try it: double-click start.bat → http://127.0.0.1:8765 · demo users astro1 / cmo1 / surgeon1 · password astra2026"], 16, CYAN, True)
+tb(s, 0.5, 5.9, 12.3, 0.9, "AI disclosure: " + TEAM["ai_use"], 11, MUTED)
 
 assert len(prs.slides) <= MAX_SLIDES, f"{len(prs.slides)} slides; the submission limit is {MAX_SLIDES}"
+cp = prs.core_properties  # the guide asks for AI use to be stated in metadata too
+cp.title = "BÖVD – NASA Space Apps 2026 demo"
+cp.author = TEAM["team_name"]
+cp.subject = "Create Health Monitoring Software for Astronauts on Space Missions"
+cp.keywords = "NASA Space Apps 2026; astronaut health; OSDR OSD-575; AI-assisted"
+cp.comments = ("AI disclosure: AI assistants (LLMs such as Claude) helped write code, documents and this deck. "
+               "Idea, design, data choice and review by the team. No AI-generated images, audio or video.")  # 255-char limit
 prs.save(str(OUT))
 print(f"saved {OUT} ({len(prs.slides)} slides)")
+if PLACEHOLDERS:
+    print("WARNING: config/team.json still has placeholders – fill in the team name and members before uploading.")

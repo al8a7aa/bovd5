@@ -33,7 +33,7 @@ macOS/Linux: `./start.sh` · Docker: `docker compose up`
 
 ## What is inside
 - Core: validation → personal baseline (gravity-aware) → thresholds → trends → composite 0–20 → WHY → alerts (3 priorities, escalation, Moon/Mars delay).
-- F1 Voice (EXPERIMENTAL) · F2 Eye of Truth · F3 Crew Harmony · F4 Smart Doctor · F5 Radiation Map · F6 Urine analytics · F7 Coach · F8 Smart Nostalgia · F9 Black Box · F10 camera posture check.
+- F1 Voice (EXPERIMENTAL) · F2 Eye of Truth · F3 Crew Harmony · F4 Smart Doctor · F5 Radiation Map · F6 Urine analytics · F7 Coach · F8 Smart Nostalgia · F9 Black Box · F10 camera posture check · F11 NASA-grounded AI research assistant (EXPERIMENTAL, online, opt-in: a free OpenRouter model answers only from the bundled NASA/CSA sources and cites them).
 - Encryption at rest (AES-256-GCM), FHIR R4 + LOINC + UCUM, provenance badges, Arabic/English RTL, glove & high-contrast modes.
 - Version 2 (November 2026): new visual identity, animated intro, 3D body with how-to animations for each check, camera posture check (OpenCV + MediaPipe, with a manual mode), 29-entry evidence register, environment simulation, 11-step guided tour, responsive layout. The camera checks posture only; it never measures vital signs.
 
@@ -43,10 +43,13 @@ macOS/Linux: `./start.sh` · Docker: `docker compose up`
 - Everything else in the demo crew is clearly labelled SYNTHETIC.
 
 ## Documents (English)
-- Submission: `deliverables/English/BOVD_Demo_7_slides.pptx` (7-slide demo) · `deliverables/English/SUBMISSION_REFERENCES.md` (text for the References field)
+- Submission: `deliverables/English/BOVD_Demo_7_slides.pdf` and `.pptx` (7-slide demo) · `deliverables/English/SUBMISSION_FORM.md` (draft text for every form field) · `deliverables/English/SUBMISSION_REFERENCES.md` (text for the References field)
 - Full deck and reports: `deliverables/English/BOVD_Presentation.pptx` · `deliverables/English/CODE_EXPLAINED.docx` · `deliverables/English/ISO_STANDARDS_ALIGNMENT.docx`
 - `deliverables/English/`: `SOURCES.md` · `RISK_REGISTER.md` · `TRACEABILITY.md` · `PROJECT_STATUS.md` · `PRIVACY.md` · `CODE_EXPLAINED.md` · `sbom.spdx.json`
 - Arabic versions: `README_AR.md` and the files in `deliverables/` and the project root.
+
+## Use of AI tools
+AI assistants (large language models such as Claude) helped write parts of the code, the documents, the translations and the 7-slide demo deck. The idea, the design decisions, the choice of data and the review of all output were the team's own work. No AI-generated images, audio or video are used; all screenshots are of the running app. Git commits made with an AI assistant carry a `Co-Authored-By` line naming it.
 
 ## Quality
 140 pytest tests · coverage (stdlib tracer) engine+validation+features ≈ 97 % · ruff clean · mypy --strict clean.

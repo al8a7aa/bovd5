@@ -1,0 +1,6 @@
+{
+  "_note": "Shown on slide 1 of the demo deck (the submission guide requires the team name and the names of all members). Replace the bracketed placeholders, then run: python scripts/build_demo_deck.py",
+  "team_name": "[TEAM NAME]",
+  "members": ["[FULL NAME 1]", "[FULL NAME 2]"],
+  "ai_use": "AI assistants (large language models such as Claude) helped write parts of the code, the documents, the translations and this slide deck. The idea, the design decisions, the choice of data and the review of all output were the team's own work. No AI-generated images, audio or video are used."
+}
