@@ -7,10 +7,15 @@ BÖVD is an offline, explainable health decision-support app for astronauts on t
 > Hackathon prototype for decision support and training only. Not a certified medical device.
 > AI assistants helped write parts of the code, documents and demo deck; see "Use of AI tools" in [BOVD/README.md](BOVD/README.md).
 
-## Start
-1. Install Python 3.10 or newer (tick **Add python.exe to PATH**).
-2. Double-click `BOVD/start.bat`. The app opens at `http://127.0.0.1:8765`.
-3. Log in as `astro1`, `cmo1` or `surgeon1` with the password `astra2026`.
+## Download and run (no coding needed)
+1. **Download the app:** [BOVD-v1.0.zip from the latest release](https://github.com/al8a7aa/bovd5/releases/latest), or [download the v1.0 source ZIP](https://github.com/al8a7aa/bovd5/archive/refs/tags/v1.0.zip).
+2. **Unzip it** (right-click → Extract All).
+3. Install **Python 3.10 or newer** from [python.org](https://www.python.org/downloads/) and tick **Add python.exe to PATH**.
+4. Open the `BOVD` folder and **double-click `start.bat`**. The app opens in your browser at `http://127.0.0.1:8765`.
+5. **Log in** as `astro1` (astronaut), `cmo1` (Crew Medical Officer) or `surgeon1` (flight surgeon) with the password `astra2026`.
+6. To stop the app, close the black command window.
+
+Everything runs on your computer with no internet. The optional AI assistant needs internet and an OpenRouter key (see [BOVD/README.md](BOVD/README.md)).
 
 macOS/Linux: `BOVD/start.sh` · Docker: `docker compose up` in `BOVD/`
 
