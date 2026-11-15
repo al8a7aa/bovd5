@@ -11,8 +11,9 @@ BÖVD – Explainable Offline Health Monitoring for Astronauts
 BÖVD is an offline health-monitoring app that lets astronauts check their own health on the ISS, on the Moon, in Mars transit and on Mars. An astronaut enters a measurement such as heart rate, blood pressure, blood sugar, temperature, sleep or mood. The app compares it first with that astronaut's own baseline, adjusted for the current gravity, and then with NASA and clinical reference ranges and recent trends. It then gives four clear answers: the status (green, yellow or red), why, the next step to take, and who to contact. Alerts go from the crew to the Crew Medical Officer and on to the flight surgeon over a simulated Earth link with the real Moon or Mars delay, so the crew is never left waiting for an answer from Earth. Every reading and threshold shows its source, and the app loads real NASA data from the Open Science Data Repository (study OSD-575, SpaceX Inspiration4). This matters because on a Mars mission a message to Earth takes 4–24 minutes one way. The crew must be able to understand and act on their own health data, and BÖVD gives them clear, explained guidance without needing medical training.
 
 ## Link to Project Demo
-✏️ https://github.com/al8a7aa/bovd5/blob/main/BOVD/deliverables/English/BOVD_Demo_7_slides.pdf
-(7-slide deck, English – the official demo, within the 7-slide limit. Open the link in a private browser window to check it before submitting.)
+✏️ Upload `BOVD/deliverables/English/BOVD_Demo_30s.mp4` to YouTube (Unlisted) and paste that link here – YouTube plays it in the browser for judges.
+Backup link (GitHub): https://github.com/al8a7aa/bovd5/blob/main/BOVD/deliverables/English/BOVD_Demo_30s.mp4
+(29-second video, English captions, no voice – within the 30-second limit. It tours every slide and every app page. The 7-slide PDF also meets the rules if you prefer slides: https://github.com/al8a7aa/bovd5/blob/main/BOVD/deliverables/English/BOVD_Demo_7_slides.pdf)
 Full presentation (16 slides, for the live pitch and for judges who want every detail): https://github.com/al8a7aa/bovd5/blob/main/BOVD/deliverables/English/BOVD_Full_Presentation.pdf – mention it in the Detailed Project Description, not as the demo link.
 
 ## Link to Final Project
