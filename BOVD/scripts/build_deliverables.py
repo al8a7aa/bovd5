@@ -705,7 +705,7 @@ macOS/Linux: `./start.sh` · Docker: `docker compose up`
 - Everything else in the demo crew is clearly labelled SYNTHETIC.
 
 ## Documents (English)
-- Submission: `deliverables/English/BOVD_Demo_7_slides.pdf` and `.pptx` (7-slide demo) · `deliverables/English/SUBMISSION_FORM.md` (draft text for every form field) · `deliverables/English/SUBMISSION_REFERENCES.md` (text for the References field)
+- Submission: `deliverables/English/BOVD_Demo_7_slides.pdf` and `.pptx` (7-slide demo) · `deliverables/English/BOVD_Full_Presentation.pdf` (full 16-slide presentation) · `deliverables/English/SUBMISSION_FORM.md` (draft text for every form field) · `deliverables/English/SUBMISSION_REFERENCES.md` (text for the References field)
 - Full deck and reports: `deliverables/English/BOVD_Presentation.pptx` · `deliverables/English/CODE_EXPLAINED.docx` · `deliverables/English/ISO_STANDARDS_ALIGNMENT.docx`
 - `deliverables/English/`: `SOURCES.md` · `RISK_REGISTER.md` · `TRACEABILITY.md` · `PROJECT_STATUS.md` · `PRIVACY.md` · `CODE_EXPLAINED.md` · `sbom.spdx.json`
 - Arabic versions: `README_AR.md` and the files in `deliverables/` and the project root.

@@ -12,7 +12,8 @@ BÖVD is an offline health-monitoring app that lets astronauts check their own h
 
 ## Link to Project Demo
 ✏️ https://github.com/al8a7aa/bovd5/blob/main/BOVD/deliverables/English/BOVD_Demo_7_slides.pdf
-(7-slide deck, English. Works once this branch is merged into `main` and pushed. Open the link in a private browser window to check it before submitting.)
+(7-slide deck, English – the official demo, within the 7-slide limit. Open the link in a private browser window to check it before submitting.)
+Full presentation (16 slides, for the live pitch and for judges who want every detail): https://github.com/al8a7aa/bovd5/blob/main/BOVD/deliverables/English/BOVD_Full_Presentation.pdf – mention it in the Detailed Project Description, not as the demo link.
 
 ## Link to Final Project
 ✏️ https://github.com/al8a7aa/bovd5
@@ -26,6 +27,9 @@ BÖVD is an offline health-monitoring app that lets astronauts check their own h
 - Sends alerts at three priority levels from the crew to the Crew Medical Officer and to the ground flight surgeon, with a store-and-forward queue that simulates the Moon (≈1.3 s) and Mars (4–24 min) communication delay.
 - Covers all five NASA hazards of human spaceflight: radiation (personal dose map and solar-storm shelter mode), isolation (sleep, mood and crew-harmony trends), distance (7 offline "Smart Doctor" protocols), gravity (gravity-aware baselines and a post-landing stand test) and closed environment (cabin CO₂ judged at the actual cabin pressure).
 - Five roles with different access: astronaut, Crew Medical Officer, behavioral health specialist, flight surgeon and researcher.
+- Gives guidance for all 17 indicators: why each check matters in space and how to stay healthy and prevent a critical condition, with sources.
+- Optional NASA-grounded AI research assistant on the Smart Doctor page: a free OpenRouter model answers the astronaut's questions only from 116 bundled NASA and CSA excerpts and cites each one. It never diagnoses, and only the typed question leaves the device, with consent.
+- Full 16-slide presentation: https://github.com/al8a7aa/bovd5/blob/main/BOVD/deliverables/English/BOVD_Full_Presentation.pdf
 
 **How it works**
 Validation → personal baseline (mean ± 2 SD of the astronaut's own early-flight or pre-flight readings) → reference thresholds → trend rules (for example, 3 short nights in a row turns red) → composite score → explanation and alert. All thresholds are in configuration files with a citation for each one, so a flight surgeon can review and change them. The app never diagnoses; it gives status, explanation, next step and who to contact.
@@ -40,10 +44,10 @@ Validation → personal baseline (mean ± 2 SD of the astronaut's own early-flig
 A tool that crews on the Artemis Moon base and future Mars missions could use for Earth-independent medical care. The same approach also fits Antarctic stations and remote clinics on Earth. Next steps: a flight-surgeon review of every threshold, more NASA data, a neutron-dose input similar to the CSA's CANS instrument, and usability tests with gloves in an analog mission.
 
 **Tools and languages**
-Python 3 (standard library only) for the server and the assessment engine; SQLite for storage; HTML, CSS and JavaScript with WebGL for the interface and the 3D body; FHIR R4 with LOINC codes for health records. Optional: OpenCV and MediaPipe for the camera posture check, and the cryptography library for faster encryption. Tested with pytest (140 automated tests). Starts on Windows by double-clicking `start.bat`; on macOS and Linux with `./start.sh`, or with Docker.
+Python 3 (standard library only) for the server and the assessment engine; SQLite for storage; HTML, CSS and JavaScript with WebGL for the interface and the 3D body; FHIR R4 with LOINC codes for health records. Optional: OpenCV and MediaPipe for the camera posture check, and the cryptography library for faster encryption. Optional AI assistant through the OpenRouter API (free model router `openrouter/free`). Tested with pytest (151 automated tests). Starts on Windows by double-clicking `start.bat`; on macOS and Linux with `./start.sh`, or with Docker.
 
 ## Use of Super Intelligence (SI)
-Yes. AI assistants (large language models such as Claude) helped write parts of the code, the documents, the translations between Arabic and English, and the 7-slide demo deck. The idea for the solution, the design decisions, the choice of data and the review of all generated output were the team's own work. We did not use AI to generate images, audio or video; all screenshots are of the running app. The AI use is stated in the repository README ("Use of AI tools"), in the demo deck (slide 7 and the file properties), in `pyproject.toml` (keyword `ai-assisted`) and in `Co-Authored-By` lines on commits made with an AI assistant.
+Yes. AI assistants (large language models such as Claude) helped write parts of the code, the documents, the translations between Arabic and English, and the 7-slide demo deck. The idea for the solution, the design decisions, the choice of data and the review of all generated output were the team's own work. The app itself includes an optional AI research assistant (a free OpenRouter language model) that answers only from bundled NASA and CSA sources. We did not use AI to generate images, audio or video for the project; all screenshots are of the running app (the separate Canva pitch deck uses Canva-generated space images). The AI use is stated in the repository README ("Use of AI tools"), in the demo deck (slide 7 and the file properties), in `pyproject.toml` (keyword `ai-assisted`) and in `Co-Authored-By` lines on commits made with an AI assistant.
 
 ## NASA Data
 - **NASA Open Science Data Repository (OSDR), study OSD-575** – SpaceX Inspiration4 Blood Serum Metabolic Panel. https://osdr.nasa.gov/bio/repo/data/studies/OSD-575 – we use the serum glucose values for 4 crew members at 7 time points (3 before launch, 4 after return). The app loads them on first start as REAL data, converts them to FHIR health records and compares them with reference ranges. The built-in OSDR loader can import any other OSDR study in the same way.

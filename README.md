@@ -17,6 +17,7 @@ macOS/Linux: `BOVD/start.sh` · Docker: `docker compose up` in `BOVD/`
 ## Where to look
 - [BOVD/README.md](BOVD/README.md) – full description, judge demo script, features and data
 - [BOVD/deliverables/English/BOVD_Demo_7_slides.pdf](BOVD/deliverables/English/BOVD_Demo_7_slides.pdf) – 7-slide demo (also as .pptx)
+- [BOVD/deliverables/English/BOVD_Full_Presentation.pdf](BOVD/deliverables/English/BOVD_Full_Presentation.pdf) – full 16-slide presentation
 - [BOVD/deliverables/English/SOURCES.md](BOVD/deliverables/English/SOURCES.md) – references (APA 7) and datasets
 - [BOVD/data/real/OSD-575/README.md](BOVD/data/real/OSD-575/README.md) – the real NASA data and how it was transformed
 - [BOVD/README_AR.md](BOVD/README_AR.md) – Arabic version
