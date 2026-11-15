@@ -233,7 +233,7 @@ class DocAR:
     def references(self) -> None:
         self.h("المراجع", 1)
         self.p("المراجع مكتوبة بصيغة APA 7 بلغتها الأصلية (الإنجليزية) كما تقتضي قواعد التوثيق، ويسبق كل مرجع وصف عربي لمحتواه.", size=14)
-        items = sorted(REFS.items(), key=lambda kv: kv[1]["apa"].replace("National Aeronautics and Space Administration", "NASA").lower())
+        items = sorted(((k, v) for k, v in REFS.items() if k != "clinical_default"), key=lambda kv: kv[1]["apa"].replace("National Aeronautics and Space Administration", "NASA").lower())
         for key, v in items:
             pa = self.d.add_paragraph()
             rtl_par(pa)
@@ -360,7 +360,7 @@ def build_code_ar() -> None:
     D.table(["الطريقة", "المسار", "الصلاحية", "الغرض"], rows, "واجهة REST (مولّدة من جدول المسارات؛ وصف OpenAPI على ‎/api/openapi.json‎).", [1.6, 5.5, 2.8, 7], 10.5, ltr_cols=(0, 1, 3))
 
     D.h("9. الاختبارات", 1)
-    D.p("109 اختبارات آلية (pytest): اختبارات وحدات لكل طبقة، و33 حالة لحدود العتبات، و10 اختبارات سيناريو (واحد لكل سيناريو مُصطنع)، واختبار العبث بسلسلة التجزئة، "
+    D.p("140 اختبارًا آليًا (pytest): اختبارات وحدات لكل طبقة، و33 حالة لحدود العتبات، و10 اختبارات سيناريو (واحد لكل سيناريو مُصطنع)، واختبار العبث بسلسلة التجزئة، "
         "و8 اختبارات لسحب الموافقة واختبار لإطفاء الميزة تثبت عدم حفظ أي شيء، واختبارات الصلاحيات، واختبار تطابق التشفير مع OpenSSL. "
         "التغطية (مقيسة بسكربت من المكتبة القياسية scripts/coverage_lite.py): المحرك والتحقق والميزات نحو 97٪، والحزمة كاملة نحو 88٪. "
         "الفحوص الثابتة: ruff (مع قواعد الأمان) نظيف، و mypy الصارم نظيف، وتشغيل الواجهة في متصفح آلي دون أخطاء.")
@@ -439,7 +439,7 @@ def md_table(h, rows) -> str:
 
 def build_md_ar() -> None:
     W = lambda name, body: (ROOT / name).write_text('<div dir="rtl">\n\n' + body + "\n\n</div>\n", encoding="utf-8")  # noqa: E731
-    W("README.md", f"""# 🛰️ BÖVD
+    W("README_AR.md", f"""# 🛰️ BÖVD
 
 **تحدي ناسا Space Apps 2026 – برمجيات مراقبة صحة رواد الفضاء في المهمات الفضائية**
 
@@ -479,12 +479,13 @@ macOS/Linux: `./start.sh` · Docker: `docker compose up`
 النسخ الإنجليزية لكل الوثائق في `deliverables/English/` (مفيدة للمحكّمين الدوليين).
 
 ## الجودة
-109 اختبارات pytest · التغطية للمحرك والتحقق والميزات نحو 97٪ · ruff نظيف · mypy الصارم نظيف.""")
-    items = sorted(REFS.items(), key=lambda kv: kv[1]["apa"].replace("National Aeronautics and Space Administration", "NASA").lower())
+140 اختبارًا في pytest · التغطية للمحرك والتحقق والميزات نحو 97٪ · ruff نظيف · mypy الصارم نظيف.""")
+    items = sorted(((k, v) for k, v in REFS.items() if k != "clinical_default"), key=lambda kv: kv[1]["apa"].replace("National Aeronautics and Space Administration", "NASA").lower())
     src = "# المصادر (APA 7)\n\nتحقّق من فتح كل رابط قبل التسليم. لم يُختلق أي مرجع؛ أي مرجع غير معروف يُوسم [CITATION NEEDED]. المراجع بلغتها الأصلية كما تقتضي قواعد APA، مع وصف عربي.\n\n"
     src += "\n".join(f"- **{A.REF_AR.get(k, '')}**  \n  <span dir=\"ltr\">{v['apa']} {v['url']}</span>" for k, v in items)
     src += "\n\n## مجموعات البيانات\n" + md_table(["المصدر", "الرقم", "الرابط", "الترخيص", "الحقول", "التحويل"], [
-        ("مستودع ناسا OSDR", "OSD-n يختاره الفريق (غير مضمّن)", "https://osdr.nasa.gov", "بيانات ناسا المفتوحة + توثيق الدراسة", "حسب mapping.json", "CSV ← قراءة FHIR، REAL(OSD-n)"),
+        ('مستودع ناسا OSDR – لوحة الأيض لطاقم SpaceX Inspiration4 (مضمّنة)', 'OSD-575', 'https://osdr.nasa.gov/bio/repo/data/studies/OSD-575', 'بيانات ناسا المفتوحة – “Data are courtesy of the NASA Open Science Data Repository”؛ الدراسة: Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y', 'عمود الجلوكوز من LSDS-8_Comprehensive_Metabolic_Panel_CMP_TRANSFORMED.csv؛ 4 أفراد × 7 نقاط زمنية = 28 قيمة', 'scripts/build_osd575.py: تسميات الأيام L-n و R+n ← تواريخ من الإطلاق 2021-09-16 والعودة 2021-09-18 (12:00 UTC)؛ عينات L- ← earth_preflight وعينات R+ ← earth_postflight؛ CSV ← قراءة FHIR، REAL(OSD-575)'),
+        ('مستودع ناسا OSDR (أي دراسة أخرى)', 'OSD-n يختاره الفريق', 'https://osdr.nasa.gov', 'بيانات ناسا المفتوحة + توثيق الدراسة', 'حسب mapping.json', 'CSV ← قراءة FHIR، REAL(OSD-n)'),
         ("بوابة ناسا لعلوم الحياة", "بعد طلب البيانات", "https://nlsp.nasa.gov", "حسب الاتفاقية", "حسب mapping.json", "نفس الطريقة"),
         ("مولّد البيانات المُصطنعة", "10 سيناريوهات", "astra/synthetic.py", "المشروع", "كل المؤشرات", "SYNTHETIC(السيناريو)")])
     W("SOURCES.md", src)

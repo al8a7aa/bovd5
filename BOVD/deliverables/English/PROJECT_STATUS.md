@@ -14,7 +14,7 @@
 - F1 voice: on-device feature extraction implemented in the browser; accuracy not validated (EXPERIMENTAL)
 - F2 webcam blink: crude luminance method, EXPERIMENTAL; MediaPipe not bundled (offline, no download)
 - F3 crew index and F8 connection: logic complete, weights are examples awaiting expert review
-- REAL data: OSDR loader + mapping implemented; no real dataset bundled (must be downloaded)
+- REAL data: NASA OSDR OSD-575 (Inspiration4 serum glucose, 4 crew × 7 time points) bundled and loaded on first start; other indicators still use labelled synthetic data. The OSDR loader imports more studies
 - PWA: offline cache and IndexedDB outbox; the app also needs the local Python server running
 
 ## Next

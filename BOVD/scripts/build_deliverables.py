@@ -53,6 +53,8 @@ INTEXT = {
     "george_2024": "George et al., 2024", "nasa_artemis_rad": "NASA, n.d.-a", "smith_1999": "Smith et al., 1999",
     "smith_2012": "Smith et al., 2012", "scott_2023": "Scott et al., 2023", "english_2020": "English et al., 2020",
     "vanbaalen_2017": "Van Baalen, 2017", "lsda_2024": "NASA Life Sciences Data Archive, 2024", "osdr": "NASA, n.d.-e", "nlsp": "NASA, n.d.-f",
+    "hrp_risks_2026": "NASA Human Research Program, 2026a", "hrp_research_2026": "NASA Human Research Program, 2026b",
+    "csa_radiation_2026": "Canadian Space Agency, 2026", "csa_science_2025": "Canadian Space Agency, 2025",
 }
 
 
@@ -63,7 +65,7 @@ def cite(*keys: str) -> str:
 def ref_list() -> list[str]:
     def norm(a: str) -> str:
         return a.replace("National Aeronautics and Space Administration", "NASA")
-    items = sorted(REFS.items(), key=lambda kv: norm(kv[1]["apa"]).lower())
+    items = sorted(((k, v) for k, v in REFS.items() if k != "clinical_default"), key=lambda kv: norm(kv[1]["apa"]).lower())
     return [f"{v['apa']} {v['url']}".strip() for _, v in items]
 
 
@@ -403,7 +405,7 @@ def build_code_explained() -> None:
     D.table(["Method", "Path", "Permission", "Purpose"], rows, "REST API (generated from the route table; OpenAPI at /api/openapi.json).", [1.6, 5.5, 2.8, 7], 7.5)
 
     D.h("9. Testing", 1)
-    D.p("109 automated tests (pytest): unit tests per layer, 33 threshold boundary cases, 10 scenario tests (one per synthetic scenario), hash-chain tamper test, "
+    D.p("140 automated tests (pytest): unit tests per layer, 33 threshold boundary cases, 10 scenario tests (one per synthetic scenario), hash-chain tamper test, "
         "8 consent-off tests plus a feature-flag-off test proving nothing is stored, RBAC tests, and an AES-GCM equivalence test against OpenSSL. "
         "Coverage (standard-library tracer, scripts/coverage_lite.py): engine + validation + features ≈ 97 %, whole package ≈ 88 %. "
         "Static checks: ruff (incl. flake8-bandit security rules) clean, mypy --strict clean, headless-browser UI run without console errors.")
@@ -672,11 +674,11 @@ def build_md() -> None:
 Offline-first, explainable health decision support for astronauts in 0 g, on the Moon (1/6 g), in Mars transit and on Mars (3/8 g).
 Interface: **HTML/JavaScript** · Logic: **Python (standard library only)** · Start: **`start.bat`** · Data stays on `127.0.0.1`.
 
-## تشغيل سريع (Windows)
-1. ثبّت Python 3.10 أو أحدث من python.org وفعّل خيار **Add python.exe to PATH**.
-2. فك ضغط المجلد، ثم انقر نقرًا مزدوجًا على **`start.bat`**.
-3. يفتح المتصفح تلقائيًا على `http://127.0.0.1:8765` – سجّل الدخول بأحد الحسابات التجريبية (كلمة المرور `astra2026`).
-4. لإيقاف البرنامج أغلق نافذة الأوامر. لإعادة البيانات التجريبية: `reset_data.bat`. للاختبارات: `run_tests.bat`.
+## Quick start (Windows)
+1. Install Python 3.10 or newer from python.org and tick **Add python.exe to PATH**.
+2. Unzip the folder and double-click **`start.bat`**.
+3. The browser opens `http://127.0.0.1:8765`. Log in with a demo account (password `astra2026`).
+4. To stop, close the command window. Reset the demo data with `reset_data.bat`; run the tests with `run_tests.bat`.
 
 macOS/Linux: `./start.sh` · Docker: `docker compose up`
 
@@ -693,20 +695,29 @@ macOS/Linux: `./start.sh` · Docker: `docker compose up`
 
 ## What is inside
 - Core: validation → personal baseline (gravity-aware) → thresholds → trends → composite 0–20 → WHY → alerts (3 priorities, escalation, Moon/Mars delay).
-- F1 Voice (EXPERIMENTAL) · F2 Eye of Truth · F3 Crew Harmony · F4 Smart Doctor · F5 Radiation Map · F6 Urine analytics · F7 Coach · F8 Smart Nostalgia · F9 Black Box.
+- F1 Voice (EXPERIMENTAL) · F2 Eye of Truth · F3 Crew Harmony · F4 Smart Doctor · F5 Radiation Map · F6 Urine analytics · F7 Coach · F8 Smart Nostalgia · F9 Black Box · F10 camera posture check.
 - Encryption at rest (AES-256-GCM), FHIR R4 + LOINC + UCUM, provenance badges, Arabic/English RTL, glove & high-contrast modes.
+- Version 2 (November 2026): new visual identity, animated intro, 3D body with how-to animations for each check, camera posture check (OpenCV + MediaPipe, with a manual mode), 29-entry evidence register, environment simulation, 11-step guided tour, responsive layout. The camera checks posture only; it never measures vital signs.
 
-## Documents
-`deliverables/CODE_EXPLAINED.docx` · `deliverables/ISO_STANDARDS_ALIGNMENT.docx` · `deliverables/BOVD_Presentation.pptx` ·
-`SOURCES.md` · `RISK_REGISTER.md` · `TRACEABILITY.md` · `PROJECT_STATUS.md` · `PRIVACY.md` · `sbom.spdx.json` · `CODE_EXPLAINED.md`
+## NASA data
+- **REAL:** NASA Open Science Data Repository study **OSD-575** (SpaceX Inspiration4): serum glucose for 4 crew members at 7 time points before and after flight, loaded on first start with a REAL badge. See `data/real/OSD-575/README.md`.
+- The built-in OSDR loader imports any other OSDR study (`astra/ingest/README.md`).
+- Everything else in the demo crew is clearly labelled SYNTHETIC.
+
+## Documents (English)
+- Submission: `deliverables/English/BOVD_Demo_7_slides.pptx` (7-slide demo) · `deliverables/English/SUBMISSION_REFERENCES.md` (text for the References field)
+- Full deck and reports: `deliverables/English/BOVD_Presentation.pptx` · `deliverables/English/CODE_EXPLAINED.docx` · `deliverables/English/ISO_STANDARDS_ALIGNMENT.docx`
+- `deliverables/English/`: `SOURCES.md` · `RISK_REGISTER.md` · `TRACEABILITY.md` · `PROJECT_STATUS.md` · `PRIVACY.md` · `CODE_EXPLAINED.md` · `sbom.spdx.json`
+- Arabic versions: `README_AR.md` and the files in `deliverables/` and the project root.
 
 ## Quality
-109 pytest tests · coverage (stdlib tracer) engine+validation+features ≈ 97 % · ruff clean · mypy --strict clean.
+140 pytest tests · coverage (stdlib tracer) engine+validation+features ≈ 97 % · ruff clean · mypy --strict clean.
 """, encoding="utf-8")
     src = "# SOURCES (APA 7)\n\nVerify each link opens before submission. No reference has been invented; unknown items would be marked [CITATION NEEDED].\n\n"
     src += "\n".join(f"- {r}" for r in ref_list())
     src += "\n\n## Datasets\n" + md_table(["Source", "ID", "URL", "License", "Fields", "Transformation"], [
-        ("NASA OSDR", "chosen OSD-n (none bundled)", "https://osdr.nasa.gov", "NASA open data + study citation", "per mapping.json", "CSV → FHIR Observation, REAL(OSD-n)"),
+        ('NASA OSDR – SpaceX Inspiration4 serum metabolic panel (bundled)', 'OSD-575', 'https://osdr.nasa.gov/bio/repo/data/studies/OSD-575', 'NASA open data – “Data are courtesy of the NASA Open Science Data Repository”; study: Overbey, E. G., et al. (2024). The Space Omics and Medical Atlas (SOMA) and international astronaut biobank. Nature. https://doi.org/10.1038/s41586-024-07639-y', 'glucose_value_milligram_per_deciliter from LSDS-8_Comprehensive_Metabolic_Panel_CMP_TRANSFORMED.csv; 4 crew × 7 time points = 28 values', 'scripts/build_osd575.py: day labels L-n / R+n → dates from launch 2021-09-16 and return 2021-09-18 (12:00 UTC, sampling time not in source); L- samples → earth_preflight, R+ samples → earth_postflight; CSV → FHIR Observation (LOINC 2339-0, mg/dL), REAL(OSD-575)'),
+        ('NASA OSDR (any other study)', 'chosen OSD-n', 'https://osdr.nasa.gov', 'NASA open data + study citation', 'per mapping.json', 'CSV → FHIR Observation, REAL(OSD-n)'),
         ("NASA Life Sciences Portal", "after data request", "https://nlsp.nasa.gov", "per agreement", "per mapping.json", "same"),
         ("Synthetic generator", "10 scenarios", "astra/synthetic.py", "project", "all indicators", "SYNTHETIC(scenario)")])
     (ROOT / "SOURCES.md").write_text(src, encoding="utf-8")

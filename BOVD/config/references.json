@@ -15,6 +15,26 @@
     "url": "https://www.nasa.gov/hrp/hazards",
     "topic": "program"
   },
+  "hrp_risks_2026": {
+    "apa": "NASA Human Research Program. (2026, July 21). Risks of human spaceflight.",
+    "url": "https://www.nasa.gov/hrp/risks/",
+    "topic": "program"
+  },
+  "hrp_research_2026": {
+    "apa": "NASA Human Research Program. (2026, August 18). Ongoing HRP research in space.",
+    "url": "https://www.nasa.gov/hrp/ongoing-hrp-research/",
+    "topic": "program"
+  },
+  "csa_radiation_2026": {
+    "apa": "Canadian Space Agency. (2026, February 26). Monitoring radiation for astronaut health.",
+    "url": "https://www.asc-csa.gc.ca/eng/news/articles/2026/2026-02-26-monitoring-radiation-astronaut-health.asp",
+    "topic": "radiation"
+  },
+  "csa_science_2025": {
+    "apa": "Canadian Space Agency. (2025). Why do we conduct science experiments in space?",
+    "url": "https://www.asc-csa.gc.ca/eng/iss/science/why-do-we-conduct-science-experiments-in-space.asp",
+    "topic": "program"
+  },
   "hrp_oi_2015": {
     "apa": "NASA Human Research Program. (2015). Evidence report: Risk of orthostatic intolerance during re-exposure to gravity.",
     "url": "https://ntrs.nasa.gov/api/citations/20150007319/downloads/20150007319.pdf",

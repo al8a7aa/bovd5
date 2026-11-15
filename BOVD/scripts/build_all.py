@@ -16,4 +16,7 @@ for f in ("CODE_EXPLAINED.docx", "CODE_EXPLAINED.md", "ISO_STANDARDS_ALIGNMENT.d
     shutil.move(str(D / f), str(D / "English" / f))
 run("build_docs_ar.py")
 run("build_presentation_ar.py")
+run("build_demo_deck.py")
+# The English README is the main one (submission material must be in English); the Arabic one is README_AR.md.
+shutil.copy(str(D / "English" / "README.md"), str(R / "README.md"))
 print("all deliverables built")

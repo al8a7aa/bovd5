@@ -4,6 +4,8 @@ Verify each link opens before submission. No reference has been invented; unknow
 
 - Barger, L. K., Flynn-Evans, E. E., Kubey, A., Walsh, L., Ronda, J. M., Wang, W., Wright, K. P., Jr., & Czeisler, C. A. (2014). Prevalence of sleep deficiency and use of hypnotic drugs in astronauts before, during, and after spaceflight: An observational study. The Lancet Neurology, 13(9), 904–912. https://doi.org/10.1016/S1474-4422(14)70122-X
 - Brunstetter, T. (2023). Spaceflight associated neuro-ocular syndrome (SANS): A briefing for astronaut candidates [Presentation]. NASA Technical Reports Server. https://ntrs.nasa.gov/api/citations/20230006218/downloads/Brunstetter%20-%20Crewmember%20SANS%20Overview%20-%20Export%20Control%20-FINAL%20-%2001May23.pdf
+- Canadian Space Agency. (2025). Why do we conduct science experiments in space? https://www.asc-csa.gc.ca/eng/iss/science/why-do-we-conduct-science-experiments-in-space.asp
+- Canadian Space Agency. (2026, February 26). Monitoring radiation for astronaut health. https://www.asc-csa.gc.ca/eng/news/articles/2026/2026-02-26-monitoring-radiation-astronaut-health.asp
 - English, K. L., et al. (2020). High intensity training during spaceflight: Results from the NASA Sprint Study. npj Microgravity, 6. https://doi.org/10.1038/s41526-020-00111-x
 - George, S. P., et al. (2024). Space radiation measurements during the Artemis I lunar mission. Nature. https://doi.org/10.1038/s41586-024-07927-7
 - Lee, A. G., Mader, T. H., Gibson, C. R., Tarver, W., Rabiei, P., Riascos, R. F., Galdamez, L. A., & Brunstetter, T. (2020). Spaceflight associated neuro-ocular syndrome (SANS) and the neuro-ophthalmologic effects of microgravity: A review and an update. npj Microgravity, 6, Article 7. https://doi.org/10.1038/s41526-020-0097-9
@@ -14,6 +16,8 @@ Verify each link opens before submission. No reference has been invented; unknow
 - NASA Human Research Program. (2015). Evidence report: Risk of adverse cognitive or behavioral conditions and psychiatric disorders. https://ntrs.nasa.gov/api/citations/20150016966/downloads/20150016966.pdf
 - NASA Human Research Program. (2015). Evidence report: Risk of orthostatic intolerance during re-exposure to gravity. https://ntrs.nasa.gov/api/citations/20150007319/downloads/20150007319.pdf
 - NASA Human Research Program. (2022). Evidence report: Risk of performance and behavioral health decrements due to inadequate cooperation, coordination, communication, and psychosocial adaptation within a team. https://ntrs.nasa.gov/citations/20220007465
+- NASA Human Research Program. (2026, August 18). Ongoing HRP research in space. https://www.nasa.gov/hrp/ongoing-hrp-research/
+- NASA Human Research Program. (2026, July 21). Risks of human spaceflight. https://www.nasa.gov/hrp/risks/
 - NASA Human Research Program. (n.d.). Five hazards of human spaceflight. https://www.nasa.gov/hrp/hazards
 - NASA Life Sciences Data Archive. (2024). Why we do what we do: Data reuse, open access, and privacy in data management at the Life Sciences Data Archive. https://ntrs.nasa.gov/citations/20240012051
 - NASA Office of the Chief Health and Medical Officer. (2023). Sleep accommodations [Technical brief]. https://www.nasa.gov/wp-content/uploads/2023/03/sleep-accomodations-technical-brief-ochmo.pdf

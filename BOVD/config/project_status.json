@@ -13,7 +13,7 @@
     "F1 voice: on-device feature extraction implemented in the browser; accuracy not validated (EXPERIMENTAL)",
     "F2 webcam blink: crude luminance method, EXPERIMENTAL; MediaPipe not bundled (offline, no download)",
     "F3 crew index and F8 connection: logic complete, weights are examples awaiting expert review",
-    "REAL data: OSDR loader + mapping implemented; no real dataset bundled (must be downloaded)",
+    "REAL data: NASA OSDR OSD-575 (Inspiration4 serum glucose, 4 crew × 7 time points) bundled and loaded on first start; other indicators still use labelled synthetic data. The OSDR loader imports more studies",
     "PWA: offline cache and IndexedDB outbox; the app also needs the local Python server running"
   ],
   "next": [
@@ -37,7 +37,7 @@
     "F1 الصوت: استخراج الخصائص على الجهاز منفَّذ؛ الدقة غير مُتحقق منها (تجريبي)",
     "F2 رمش الكاميرا: طريقة بدائية تعتمد على الإضاءة (تجريبي)؛ مكتبة MediaPipe غير مضمّنة",
     "F3 مؤشر الطاقم و F8 الحنين: المنطق مكتمل، والأوزان أمثلة بانتظار مراجعة خبير",
-    "البيانات الحقيقية: محمّل OSDR جاهز؛ لا توجد مجموعة بيانات مضمّنة (يجب تحميلها)",
+    "البيانات الحقيقية: دراسة ناسا OSDR رقم OSD-575 (جلوكوز طاقم Inspiration4، 4 أفراد × 7 نقاط زمنية) مضمّنة وتُحمَّل عند أول تشغيل؛ بقية المؤشرات ما زالت ببيانات مُصطنعة موسومة، ومحمّل OSDR يستورد دراسات أخرى",
     "تطبيق الويب التقدمي: ذاكرة مؤقتة وصندوق إرسال دون اتصال؛ ويحتاج الخادم المحلي أن يعمل"
   ],
   "next_ar": [

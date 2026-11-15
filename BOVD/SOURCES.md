@@ -8,6 +8,10 @@
   <span dir="ltr">Barger, L. K., Flynn-Evans, E. E., Kubey, A., Walsh, L., Ronda, J. M., Wang, W., Wright, K. P., Jr., & Czeisler, C. A. (2014). Prevalence of sleep deficiency and use of hypnotic drugs in astronauts before, during, and after spaceflight: An observational study. The Lancet Neurology, 13(9), 904–912. https://doi.org/10.1016/S1474-4422(14)70122-X</span>
 - **متلازمة SANS: إحاطة للمرشحين لمهنة رائد فضاء**  
   <span dir="ltr">Brunstetter, T. (2023). Spaceflight associated neuro-ocular syndrome (SANS): A briefing for astronaut candidates [Presentation]. NASA Technical Reports Server. https://ntrs.nasa.gov/api/citations/20230006218/downloads/Brunstetter%20-%20Crewmember%20SANS%20Overview%20-%20Export%20Control%20-FINAL%20-%2001May23.pdf</span>
+- **وكالة الفضاء الكندية: لماذا نجري التجارب العلمية في الفضاء؟**  
+  <span dir="ltr">Canadian Space Agency. (2025). Why do we conduct science experiments in space? https://www.asc-csa.gc.ca/eng/iss/science/why-do-we-conduct-science-experiments-in-space.asp</span>
+- **وكالة الفضاء الكندية: مراقبة الإشعاع لصحة رواد الفضاء (مطياف النيوترونات CANS)**  
+  <span dir="ltr">Canadian Space Agency. (2026, February 26). Monitoring radiation for astronaut health. https://www.asc-csa.gc.ca/eng/news/articles/2026/2026-02-26-monitoring-radiation-astronaut-health.asp</span>
 - **التدريب عالي الشدة أثناء الرحلات الفضائية: نتائج دراسة Sprint في ناسا**  
   <span dir="ltr">English, K. L., et al. (2020). High intensity training during spaceflight: Results from the NASA Sprint Study. npj Microgravity, 6. https://doi.org/10.1038/s41526-020-00111-x</span>
 - **قياسات الإشعاع الفضائي خلال مهمة أرتميس 1 القمرية**  
@@ -28,6 +32,10 @@
   <span dir="ltr">NASA Human Research Program. (2015). Evidence report: Risk of orthostatic intolerance during re-exposure to gravity. https://ntrs.nasa.gov/api/citations/20150007319/downloads/20150007319.pdf</span>
 - **تقرير الأدلة: خطر تراجع الأداء والصحة السلوكية بسبب ضعف التعاون والتنسيق والتواصل في الفريق**  
   <span dir="ltr">NASA Human Research Program. (2022). Evidence report: Risk of performance and behavioral health decrements due to inadequate cooperation, coordination, communication, and psychosocial adaptation within a team. https://ntrs.nasa.gov/citations/20220007465</span>
+- **أبحاث برنامج البحث البشري الجارية في الفضاء**  
+  <span dir="ltr">NASA Human Research Program. (2026, August 18). Ongoing HRP research in space. https://www.nasa.gov/hrp/ongoing-hrp-research/</span>
+- **مخاطر الرحلات الفضائية البشرية (برنامج البحث البشري في ناسا)**  
+  <span dir="ltr">NASA Human Research Program. (2026, July 21). Risks of human spaceflight. https://www.nasa.gov/hrp/risks/</span>
 - **المخاطر الخمسة للرحلات الفضائية البشرية**  
   <span dir="ltr">NASA Human Research Program. (n.d.). Five hazards of human spaceflight. https://www.nasa.gov/hrp/hazards</span>
 - **إعادة استخدام البيانات والوصول المفتوح والخصوصية في أرشيف بيانات علوم الحياة**  
